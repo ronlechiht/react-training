@@ -1,3 +1,7 @@
+.game {
+    display: flex;
+}
+
 .square {
     width: 25px;
     height: 25px;
