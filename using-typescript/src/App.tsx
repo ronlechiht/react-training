@@ -1,35 +1,39 @@
-import { useState } from "react";
+import { useReducer } from "react";
 
-const [enabled, setEnabled] = useState<boolean>(false)
+interface State {
+  count: number;
+};
 
-type Status = "idle" | "loading" | "success" | "error";
-const [status, setStatus] = useState<Status>("idle");
+type CounterAction =
+  | {type: "reset"}
+  | {type: "setCount"; value: State["count"]}
 
-type RequestState =
-  | {status: 'idle'}
-  | {status: 'loading'}
-  | {status: 'success', data: any}
-  | {status: 'error', error: Error}
-const [requestState, setRequestState] = useState<RequestState>({status: 'idle'})
+const initialState: State = {count: 0}
 
-interface MyButtonProps {
-  title: string;
-  disabled: boolean;
+function stateReducer(state: State, action: CounterAction): State {
+  switch (action.type) {
+    case "reset":
+      return initialState;
+    case "setCount":
+      return { ...state, count: action.value };
+    default:
+      throw new Error("Unknown action");
+  }
 }
 
-function MyButton({ title, disabled }: MyButtonProps) {
-  return (
-    <button disabled={disabled}>{title}</button>
-  );
-}
+export default function App() {
+  const [state, dispatch] = useReducer(stateReducer, initialState);
 
-function App() {
+  const addFive = () => dispatch({ type: "setCount", value: state.count + 5 });
+  const reset = () => dispatch({ type: "reset" });
+
   return (
     <div>
-      <h1>Welcome to my app</h1>
-      <MyButton title="I'm a button" disabled={true}/>
+      <h1>Welcome to my counter</h1>
+
+      <p>Count: {state.count}</p>
+      <button onClick={addFive}>Add 5</button>
+      <button onClick={reset}>Reset</button>
     </div>
   );
 }
-
-export default App
