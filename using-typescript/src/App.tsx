@@ -1,36 +1,16 @@
-import { createContext, useContext, useState, useMemo } from 'react';
+import { useState, useCallback } from 'react';
 
-// This is a simpler example, but you can imagine a more complex object here
-type ComplexObject = {
-  kind: string
-};
+export default function Form() {
+  const [value, setValue] = useState("Change me");
 
-// The context is created with `| null` in the type, to accurately reflect the default value.
-const Context = createContext<ComplexObject | null>(null);
-
-// The `| null` will be removed via the check in the Hook.
-const useGetComplexObject = () => {
-  const object = useContext(Context);
-  if (!object) { throw new Error("useGetComplexObject must be used within a Provider") }
-  return object;
-}
-
-export default function MyApp() {
-  const object = useMemo(() => ({ kind: "complex" }), []);
-
+  const handleChange = useCallback<React.ChangeEventHandler<HTMLInputElement>>((event) => {
+    setValue(event.currentTarget.value);
+  }, [setValue])
+  
   return (
-    <Context.Provider value={object}>
-      <MyComponent />
-    </Context.Provider>
-  )
-}
-
-function MyComponent() {
-  const object = useGetComplexObject();
-
-  return (
-    <div>
-      <p>Current object: {object.kind}</p>
-    </div>
-  )
+    <>
+      <input value={value} onChange={handleChange} />
+      <p>Value: {value}</p>
+    </>
+  );
 }
