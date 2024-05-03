@@ -1,39 +1,36 @@
-import { useReducer } from "react";
+import { createContext, useContext, useState, useMemo } from 'react';
 
-interface State {
-  count: number;
+// This is a simpler example, but you can imagine a more complex object here
+type ComplexObject = {
+  kind: string
 };
 
-type CounterAction =
-  | {type: "reset"}
-  | {type: "setCount"; value: State["count"]}
+// The context is created with `| null` in the type, to accurately reflect the default value.
+const Context = createContext<ComplexObject | null>(null);
 
-const initialState: State = {count: 0}
-
-function stateReducer(state: State, action: CounterAction): State {
-  switch (action.type) {
-    case "reset":
-      return initialState;
-    case "setCount":
-      return { ...state, count: action.value };
-    default:
-      throw new Error("Unknown action");
-  }
+// The `| null` will be removed via the check in the Hook.
+const useGetComplexObject = () => {
+  const object = useContext(Context);
+  if (!object) { throw new Error("useGetComplexObject must be used within a Provider") }
+  return object;
 }
 
-export default function App() {
-  const [state, dispatch] = useReducer(stateReducer, initialState);
+export default function MyApp() {
+  const object = useMemo(() => ({ kind: "complex" }), []);
 
-  const addFive = () => dispatch({ type: "setCount", value: state.count + 5 });
-  const reset = () => dispatch({ type: "reset" });
+  return (
+    <Context.Provider value={object}>
+      <MyComponent />
+    </Context.Provider>
+  )
+}
+
+function MyComponent() {
+  const object = useGetComplexObject();
 
   return (
     <div>
-      <h1>Welcome to my counter</h1>
-
-      <p>Count: {state.count}</p>
-      <button onClick={addFive}>Add 5</button>
-      <button onClick={reset}>Reset</button>
+      <p>Current object: {object.kind}</p>
     </div>
-  );
+  )
 }
