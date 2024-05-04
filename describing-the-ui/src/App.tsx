@@ -1,5 +1,5 @@
-import PackingList from "./PackingList";
+import List from "./List"
 
 export default function App() {
-    return <PackingList/>
+    return <List/>
 }
