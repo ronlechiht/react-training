@@ -22,7 +22,7 @@ export default function Price({
 }) {
   return (
     <div className={['product-price', `product-price-${size}`].join(' ')}>
-      <span className="price-reduced">${Math.round  ((price * (100 - discount)) / 100)}</span>
+      <span className="price-reduced">${Math.round((price * (100 - discount)) / 100)}</span>
       {discount ? <span className="price-origin">${price}</span> : null}
       <Discount discount={discount} size={size}></Discount>
     </div>
