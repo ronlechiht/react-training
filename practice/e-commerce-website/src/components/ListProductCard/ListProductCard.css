@@ -1,0 +1,11 @@
+.list-product-card {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  column-gap: 20px;
+  row-gap: 36px;
+}
+
+/*REMOVE*/
+.list-product-card > li {
+  list-style-type: none;
+}
