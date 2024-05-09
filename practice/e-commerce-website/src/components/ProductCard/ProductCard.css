@@ -1,0 +1,14 @@
+.product-infor {
+  margin-top: 16px;
+}
+
+.product-name {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 27px;
+  margin: 8px 0;
+}
+
+.rating-value {
+  font-size: 14px;
+}
