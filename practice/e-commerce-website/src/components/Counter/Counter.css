@@ -1,0 +1,14 @@
+.product-counter {
+  display: flex;
+  column-gap: 35px;
+  padding: 1px 23px;
+  width: max-content;
+  border-radius: 62px;
+  background-color: #f0f0f0;
+  font-size: 16px;
+}
+
+.btn-counter {
+  border: none;
+  font-size: 24px;
+}
