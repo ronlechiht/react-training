@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import './Counter.css'
 
-export default function Counter({firstQuantity}: {firstQuantity: number}) {
+export default function Counter({firstQuantity, size}: {firstQuantity: number, size: 'sm'|'lg'}) {
   const [count, setCount] = useState(firstQuantity)
+
+  const btnCounterClass = ['btn-counter', `btn-counter-${size}`].join(' ');
 
   function handleIncrease() {
     setCount(count + 1)
@@ -13,10 +15,10 @@ export default function Counter({firstQuantity}: {firstQuantity: number}) {
   }
 
   return (
-    <div className="product-counter">
-        <button className='btn-counter' onClick={handleDecrease} disabled={(count <= 1)}>-</button>
+    <div className={["product-counter", `product-counter-${size}`].join(' ')}>
+        <button className={btnCounterClass} onClick={handleDecrease} disabled={(count <= 1)}>-</button>
         <p>{count}</p>
-        <button className='btn-counter' onClick={handleIncrease}>+</button>
+        <button className={btnCounterClass} onClick={handleIncrease}>+</button>
     </div>
   )
 }

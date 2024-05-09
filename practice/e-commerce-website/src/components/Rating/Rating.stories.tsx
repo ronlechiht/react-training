@@ -11,6 +11,7 @@ type Story = StoryObj<typeof Rating>;
 
 export const FirstStory: Story = {
   args: {
-    rating: 5
+    rating: 5,
+    size: 'lg'
   }
 };

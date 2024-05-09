@@ -12,6 +12,7 @@ type Story = StoryObj<typeof Price>;
 export const FirstStory: Story = {
   args: {
     price: 150,
-    discount: 30
+    discount: 30,
+    size: 'lg'
   }
 };

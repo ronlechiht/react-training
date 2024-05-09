@@ -11,6 +11,7 @@ type Story = StoryObj<typeof Counter>;
 
 export const FirstStory: Story = {
   args: {
-    firstQuantity: 1
+    firstQuantity: 1,
+    size: 'lg'
   }
 };

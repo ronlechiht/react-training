@@ -1,10 +1,19 @@
 .product-price {
   display: flex;
   align-items: center;
+  font-weight: 700;
+}
+
+.product-price-lg {
   column-gap: 12px;
   font-size: 32px;
-  font-weight: 700;
   line-height: 43px;
+}
+
+.product-price-sm {
+  column-gap: 10px;
+  font-size: 24px;
+  line-height: 32px;
 }
 
 .price-origin {
@@ -13,11 +22,20 @@
 }
 
 .product-discount {
-  padding: 6px 14px;
   color: #ff3333;
   background-color: #ffebeb;
-  font-size: 16px;
   font-weight: 500;
-  line-height: 22px;
   border-radius: 62px;
+}
+
+.product-discount-lg {
+  padding: 6px 14px;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.product-discount-sm {
+  padding: 6px 13px;
+  font-size: 12px;
+  line-height: 16px;
 }
