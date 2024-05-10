@@ -1,4 +1,4 @@
-# reactscript-training
+# react-training
 
 ## Overview
 
