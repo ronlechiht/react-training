@@ -1,17 +1,16 @@
-import React from 'react';
+/*Import CSS*/
 import './Price.css';
+/*Import helpers*/
+import { calcPrice } from '../../helpers/calcPrice';
 
-function Discount({ discount, size }: { discount: number; size: 'sm' | 'lg' }) {
-  if (discount) {
-    return (
-      <span className={['product-discount', `product-discount-${size}`].join(' ')}>
-        -{discount}%
-      </span>
-    );
-  }
-}
-
-export default function Rating({
+/**
+ *
+ * @param price Origin price of product
+ * @param discount Discount(%) of product
+ * @param size (sm=Small, lg=Large)
+ * @returns Origin price and discount of product
+ */
+const Discount = ({
   price,
   discount,
   size
@@ -19,12 +18,41 @@ export default function Rating({
   price: number;
   discount: number;
   size: 'sm' | 'lg';
-}) {
+}) => {
+  if (discount) {
+    return (
+      <>
+        <span className="price-origin">${price}</span>
+        <span className={['product-discount', `product-discount-${size}`].join(' ')}>
+          -{discount}%
+        </span>
+      </>
+    );
+  }
+};
+
+/**
+ *
+ * @param price Origin price of product
+ * @param discount Discount(%) of product
+ * @param size (sm=Small, lg=Large)
+ * @returns Price component
+ */
+const Price = ({
+  price,
+  discount,
+  size
+}: {
+  price: number;
+  discount: number;
+  size: 'sm' | 'lg';
+}) => {
   return (
-    <div className={['product-price', `product-price-${size}`].join(' ')}>
-      <span className="price-reduced">${(price * (100 - discount)) / 100}</span>
-      {discount ? <span className="price-origin">${price}</span> : null}
-      <Discount discount={discount} size={size}></Discount>
+    <div className={`product-price product-price-${size}`}>
+      <span className="price-reduced">${calcPrice(price, discount)}</span>
+      <Discount price={price} discount={discount} size={size} />
     </div>
   );
-}
+};
+
+export default Price;

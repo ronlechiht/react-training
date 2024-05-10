@@ -1,15 +1,29 @@
-import React from 'react';
+/*Import CSS*/
 import './Button.css';
 
-export default function Button({
-  primaryColor,
+/**
+ *
+ * @param variant Type of button
+ * @param size Size of button (sm=Small, md=Medium, lg=Large)
+ * @param label Text display in button
+ * @returns Button component
+ */
+const Button = ({
+  variant,
   size,
   label
 }: {
-  primaryColor: boolean;
-  size: 'sm' | 'md' | 'lg';
+  variant?: 'primary' | 'secondary' | 'outline';
+  size?: 'sm' | 'md' | 'lg';
   label: string;
-}) {
-  const mode = primaryColor ? 'btn-primary' : 'btn-secondary';
-  return <button className={['btn', `btn-${size}`, mode].join(' ')}>{label}</button>;
-}
+}) => {
+  return (
+    <button
+      className={`btn ${variant ? `btn-${variant}` : 'btn-primary'} ${size ? `btn-${size}` : ''}`}
+    >
+      {label}
+    </button>
+  );
+};
+
+export default Button;
