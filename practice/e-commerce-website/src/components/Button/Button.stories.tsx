@@ -11,7 +11,7 @@ type Story = StoryObj<typeof Button>;
 
 export const FirstStory: Story = {
   args: {
-    primaryColor: true,
+    color: 'primary',
     size: 'lg',
     label: 'Add to Cart'
   }

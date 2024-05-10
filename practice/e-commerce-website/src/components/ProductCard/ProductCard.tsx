@@ -1,4 +1,3 @@
-import React from 'react';
 import { Product } from '../../types/Procduct';
 import Rating from '../Rating/Rating';
 import Price from '../Price/Price';
