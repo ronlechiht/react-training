@@ -1,13 +1,29 @@
+/*Import CSS*/
 import './Button.css';
 
-export default function Button({
-  color,
+/**
+ *
+ * @param variant Type of button
+ * @param size Size of button (sm=Small, md=Medium, lg=Large)
+ * @param label Text display in button
+ * @returns Button component
+ */
+const Button = ({
+  variant,
   size,
   label
 }: {
-  color: 'primary' | 'secondary';
-  size: 'sm' | 'md' | 'lg';
+  variant?: 'primary' | 'secondary' | 'outline';
+  size?: 'sm' | 'md' | 'lg';
   label: string;
-}) {
-  return <button className={['btn', `btn-${size}`, `btn-${color}`].join(' ')}>{label}</button>;
-}
+}) => {
+  return (
+    <button
+      className={`btn ${variant ? `btn-${variant}` : 'btn-primary'} ${size ? `btn-${size}` : ''}`}
+    >
+      {label}
+    </button>
+  );
+};
+
+export default Button;

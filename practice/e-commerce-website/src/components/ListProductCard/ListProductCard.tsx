@@ -1,15 +1,20 @@
-import ProductCard from '../ProductCard/ProductCard';
+/*Import types*/
 import { Product } from '../../types/Procduct';
+/*Import components*/
+import ProductCard from '../ProductCard/ProductCard';
+/*Import CSS*/
 import './ListProductCard.css';
 
-export default function ListProductCard({ products }: { products: Product[] }) {
+const ListProductCard = ({ products }: { products: Product[] }) => {
   return (
     <ul className="list-product-card">
       {products.map((product) => (
         <li key={product.productId}>
-          <ProductCard {...product}></ProductCard>
+          <ProductCard {...product}/>
         </li>
       ))}
     </ul>
   );
 }
+
+export default ListProductCard

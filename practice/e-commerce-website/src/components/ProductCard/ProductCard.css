@@ -1,3 +1,7 @@
+.product-card {
+  width: max-content;
+}
+
 .product-infor {
   margin-top: 16px;
 }
@@ -6,6 +10,9 @@
   font-size: 20px;
   font-weight: 700;
   line-height: 27px;
+}
+
+.rating-stars {
   margin: 8px 0;
 }
 
