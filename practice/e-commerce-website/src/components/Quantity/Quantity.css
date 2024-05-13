@@ -7,15 +7,15 @@
 
 .product-quantity-lg {
   column-gap: 35px;
-  padding: 1px 23px;
-  line-height: 36px;
+  padding: 0 23px;
+  line-height: 52px;
 }
 
 .product-quantity-sm {
   column-gap: 20px;
   padding: 1px 20px;
   font-size: 14px;
-  line-height: 31px;
+  line-height: 44px;
 }
 
 .btn-quantity-lg {

@@ -19,12 +19,10 @@ p {
 
 @font-face {
   font-family: 'integralcf';
-  src: url(../public/fonts/integralcf-bold.otf);
+  src: url(../public/fonts/IntegralCF-Bold.ttf);
 }
 
 * {
   font-family: 'satoshi', sans-serif;
   color: #00000099;
-  font-size: 16px;
-  line-height: 22px;
 }

@@ -1,0 +1,49 @@
+.product-details {
+  display: flex;
+  column-gap: 40px;
+}
+
+.product-image {
+  display: flex;
+  column-gap: 14px;
+}
+
+.product-image-sm {
+  border-radius: 20px;
+}
+
+.selected {
+  border: 1px solid #000;
+}
+
+.list-product-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-details > .product-infor {
+  margin: 0;
+}
+
+.product-details > .product-infor > .product-name {
+  font-family: 'integralcf';
+  font-size: 40px;
+  line-height: 48px;
+  text-transform: uppercase;
+  color: #000;
+}
+
+.product-details > .product-infor > .rating-stars {
+  margin: 14px 0;
+}
+
+.product-desc {
+  margin-top: 10px;
+  max-width: 50ch;
+}
+
+.quantity-button-container {
+  display: flex;
+  column-gap: 20px;
+}
