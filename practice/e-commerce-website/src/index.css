@@ -3,6 +3,14 @@ button {
   border: none;
 }
 
+li {
+  list-style-type: none;
+}
+
+p {
+  margin: 0;
+}
+
 /*Base CSS*/
 @font-face {
   font-family: 'satoshi';

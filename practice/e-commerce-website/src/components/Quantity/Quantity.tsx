@@ -29,7 +29,7 @@ const Quantity = ({ firstQuantity, size }: { firstQuantity: number; size: 'sm' |
       >
         -
       </button>
-      <p>{count}</p>
+      {count}
       <button className={`btn-quantity btn-quantity-${size}`} onClick={handleIncrease}>
         +
       </button>
