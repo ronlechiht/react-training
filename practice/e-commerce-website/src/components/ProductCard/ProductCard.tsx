@@ -12,12 +12,12 @@ const ProductCard = (product: Product) => {
       <img src={`images/products/${product.productId}.webp`} alt="product image" />
       <div className="product-infor">
         <p className="product-name">{product.productName}</p>
-        <Rating rating={product.productRating} size={'sm'}/>
+        <Rating rating={product.productRating} size={'sm'} />
         <span className="rating-value">{product.productRating}/5</span>
-        <Price price={product.productPrice} discount={product.productDiscount} size={'sm'}/>
+        <Price price={product.productPrice} discount={product.productDiscount} size={'sm'} />
       </div>
     </div>
   );
-}
+};
 
-export default ProductCard
+export default ProductCard;

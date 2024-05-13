@@ -1,0 +1,48 @@
+:root {
+  --red: #ff0000;
+  --green: #00ff00;
+  --blue: #0000ff;
+  --judge-grey: #4f4631;
+  --stromboli: #314f4a;
+  --martinique: #31344f;
+}
+
+.color-radio,
+.size-radio {
+  display: none;
+}
+
+.list-color {
+  display: flex;
+  column-gap: 16px;
+}
+
+.color-circle {
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  background-color: var(--color);
+}
+
+.color-radio:checked + .color-option > .color-circle {
+  background-image: url(./images/Frame.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.list-size {
+  display: flex;
+  column-gap: 12px;
+}
+
+.size-option {
+  padding: 12px 24px;
+  background-color: #f0f0f0;
+  color: #00000099;
+  border-radius: 62px;
+}
+
+.size-radio:checked + .size-option {
+  background-color: #000;
+  color: #fff;
+}

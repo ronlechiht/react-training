@@ -10,11 +10,11 @@ const ListProductCard = ({ products }: { products: Product[] }) => {
     <ul className="list-product-card">
       {products.map((product) => (
         <li key={product.productId}>
-          <ProductCard {...product}/>
+          <ProductCard {...product} />
         </li>
       ))}
     </ul>
   );
-}
+};
 
-export default ListProductCard
+export default ListProductCard;
