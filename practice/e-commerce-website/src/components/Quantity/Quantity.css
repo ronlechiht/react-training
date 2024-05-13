@@ -1,0 +1,26 @@
+.product-quantity {
+  display: flex;
+  width: max-content;
+  border-radius: 62px;
+  background-color: #f0f0f0;
+}
+
+.product-quantity-lg {
+  column-gap: 35px;
+  padding: 1px 23px;
+  font-size: 16px;
+}
+
+.product-quantity-sm {
+  column-gap: 20px;
+  padding: 1px 20px;
+  font-size: 14px;
+}
+
+.btn-quantity-lg {
+  font-size: 24px;
+}
+
+.btn-quantity-sm {
+  font-size: 20px;
+}

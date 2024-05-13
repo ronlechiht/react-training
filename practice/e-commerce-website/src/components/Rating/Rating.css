@@ -1,0 +1,32 @@
+.rating-stars {
+  --percent: calc(var(--rating) / 5 * 100%);
+
+  display: inline-block;
+  font-size: 25px;
+  font-family: Times;
+  line-height: 1;
+
+  &::before {
+    content: '★★★★★';
+    letter-spacing: 7px;
+    background: linear-gradient(90deg, #ffc633 var(--percent), #fff var(--percent));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.rating-stars-lg {
+  font-size: 25px;
+
+  &::before {
+    letter-spacing: 7px;
+  }
+}
+
+.rating-stars-sm {
+  font-size: 18px;
+
+  &::before {
+    letter-spacing: 5px;
+  }
+}
