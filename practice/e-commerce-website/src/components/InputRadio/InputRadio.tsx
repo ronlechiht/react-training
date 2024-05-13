@@ -1,6 +1,11 @@
 /* Inport CSS */
 import './InputRadio.css';
 
+/**
+ *
+ * @param color color name string red || green || blue || judge-grey || stromboli || martinique
+ * @returns input radio of a color
+ */
 const ColorOption = ({ color }: { color: string }) => {
   return (
     <>
@@ -15,6 +20,11 @@ const ColorOption = ({ color }: { color: string }) => {
   );
 };
 
+/**
+ *
+ * @param size size name string Small || Medium || Large || X-Large
+ * @returns input radio of a size
+ */
 const SizeOption = ({ size }: { size: string }) => {
   return (
     <>
@@ -26,26 +36,47 @@ const SizeOption = ({ size }: { size: string }) => {
   );
 };
 
+/**
+ *
+ * @param options list option of color
+ * @returns list input radio of color
+ */
 const ListColor = ({ options }: { options: string[] }) => {
   return (
-    <div className="list-color">
-      {options.map((option) => (
-        <ColorOption color={option} key={option} />
-      ))}
-    </div>
+    <>
+      <p className="select-title">Select Colors</p>
+      <div className="list-color">
+        {options.map((option) => (
+          <ColorOption color={option} key={option} />
+        ))}
+      </div>
+    </>
   );
 };
 
+/**
+ *
+ * @param options list option of size
+ * @returns list input radio of size
+ */
 const ListSize = ({ options }: { options: string[] }) => {
   return (
-    <div className="list-size">
-      {options.map((option) => (
-        <SizeOption size={option} key={option} />
-      ))}
-    </div>
+    <>
+      <p className="select-title">Choose Size</p>
+      <div className="list-size">
+        {options.map((option) => (
+          <SizeOption size={option} key={option} />
+        ))}
+      </div>
+    </>
   );
 };
 
+/**
+ *
+ * @param variant type of input radio (color || size)
+ * @returns Color select section or Size select section
+ */
 const InputRadio = ({ variant, options }: { variant: 'color' | 'size'; options: string[] }) => {
   return variant === 'color' ? <ListColor options={options} /> : <ListSize options={options} />;
 };
