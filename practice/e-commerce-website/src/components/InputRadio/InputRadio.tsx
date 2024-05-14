@@ -1,3 +1,5 @@
+/* Import constants */
+import { INPUT_RADIO_VARIANTS } from '../../constants/constants';
 /* Inport CSS */
 import './InputRadio.css';
 
@@ -77,8 +79,18 @@ const ListSize = ({ options }: { options: string[] }) => {
  * @param variant type of input radio (color || size)
  * @returns Color select section or Size select section
  */
-const InputRadio = ({ variant, options }: { variant: 'color' | 'size'; options: string[] }) => {
-  return variant === 'color' ? <ListColor options={options} /> : <ListSize options={options} />;
+const InputRadio = ({
+  variant,
+  options
+}: {
+  variant: INPUT_RADIO_VARIANTS.color | INPUT_RADIO_VARIANTS.size;
+  options: string[];
+}) => {
+  return variant === INPUT_RADIO_VARIANTS.color ? (
+    <ListColor options={options} />
+  ) : (
+    <ListSize options={options} />
+  );
 };
 
 export default InputRadio;

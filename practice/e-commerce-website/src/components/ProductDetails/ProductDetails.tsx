@@ -8,6 +8,8 @@ import Price from '../Price/Price';
 import InputRadio from '../InputRadio/InputRadio';
 import Quantity from '../Quantity/Quantity';
 import Button from '../Button/Button';
+/* Import constants */
+import { BUTTON_VARIANTS, COMPONENT_SIZES, INPUT_RADIO_VARIANTS } from '../../constants/constants';
 /* Import CSS */
 import './ProductDetails.css';
 import Divider from '../Divider/divider';
@@ -50,18 +52,26 @@ const ProductDetails = (product: Product) => {
       <ProductImage productId={product.productId} />
       <div className="product-infor">
         <p className="product-name">{product.productName}</p>
-        <Rating rating={product.productRating} size={'lg'} />
+        <Rating rating={product.productRating} size={COMPONENT_SIZES.large} />
         <span className="rating-value">{product.productRating}/5</span>
-        <Price price={product.productPrice} discount={product.productDiscount} size={'lg'} />
+        <Price
+          price={product.productPrice}
+          discount={product.productDiscount}
+          size={COMPONENT_SIZES.large}
+        />
         <p className="product-desc">{product.productDesc}</p>
         <Divider />
-        <InputRadio variant={'color'} options={product.productColors} />
+        <InputRadio variant={INPUT_RADIO_VARIANTS.color} options={product.productColors} />
         <Divider />
-        <InputRadio variant={'size'} options={product.productSizes} />
+        <InputRadio variant={INPUT_RADIO_VARIANTS.size} options={product.productSizes} />
         <Divider />
         <div className="quantity-button-container">
-          <Quantity firstQuantity={1} size="lg" />
-          <Button variant="primary" size="md" label="Add to Cart" />
+          <Quantity firstQuantity={1} size={COMPONENT_SIZES.large} />
+          <Button
+            variant={BUTTON_VARIANTS.primary}
+            size={COMPONENT_SIZES.medium}
+            label="Add to Cart"
+          />
         </div>
       </div>
     </div>

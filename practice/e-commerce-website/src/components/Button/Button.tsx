@@ -1,3 +1,6 @@
+/* Import constants */
+import { BUTTON_VARIANTS } from '../../constants/constants';
+import { COMPONENT_SIZES } from '../../constants/constants';
 /*Import CSS*/
 import './Button.css';
 
@@ -13,8 +16,8 @@ const Button = ({
   size,
   label
 }: {
-  variant?: 'primary' | 'secondary' | 'outline';
-  size?: 'sm' | 'md' | 'lg';
+  variant?: BUTTON_VARIANTS.primary | BUTTON_VARIANTS.secondary | BUTTON_VARIANTS.outline;
+  size?: COMPONENT_SIZES.small | COMPONENT_SIZES.medium | COMPONENT_SIZES.large;
   label: string;
 }) => {
   return (

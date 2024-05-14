@@ -12,3 +12,29 @@ export const enum QUERY_PARAM_KEYS {
   sort = '_sort',
   order = '_order'
 }
+
+/**
+ * Define Size of component
+ */
+export const enum COMPONENT_SIZES {
+  small = 'sm',
+  medium = 'md',
+  large = 'lg'
+}
+
+/**
+ * Define variants of button
+ */
+export const enum BUTTON_VARIANTS {
+  primary = 'primary',
+  secondary = 'secondary',
+  outline = 'outline'
+}
+
+/**
+ * Define variants of InputRadio
+ */
+export const enum INPUT_RADIO_VARIANTS {
+  color = 'color',
+  size = 'size'
+}

@@ -2,6 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import InputRadio from './InputRadio';
 
+import { INPUT_RADIO_VARIANTS } from '../../constants/constants';
+
 const meta: Meta<typeof InputRadio> = {
   component: InputRadio
 };
@@ -11,14 +13,14 @@ type Story = StoryObj<typeof InputRadio>;
 
 export const FirstStory: Story = {
   args: {
-    variant: 'color',
+    variant: INPUT_RADIO_VARIANTS.color,
     options: ['judge-grey', 'stromboli', 'martinique']
   }
 };
 
 export const SecondStory: Story = {
   args: {
-    variant: 'size',
+    variant: INPUT_RADIO_VARIANTS.size,
     options: ['small', 'medium', 'large', 'x-large']
   }
 };

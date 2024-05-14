@@ -1,7 +1,9 @@
-/*Import CSS*/
-import './Price.css';
 /*Import helpers*/
 import { calcPrice } from '../../helpers/calcPrice';
+/*Import constants */
+import { COMPONENT_SIZES } from '../../constants/constants';
+/*Import CSS*/
+import './Price.css';
 
 /**
  *
@@ -17,7 +19,7 @@ const Discount = ({
 }: {
   price: number;
   discount: number;
-  size: 'sm' | 'lg';
+  size: COMPONENT_SIZES.small | COMPONENT_SIZES.large;
 }) => {
   if (discount) {
     return (
@@ -45,7 +47,7 @@ const Price = ({
 }: {
   price: number;
   discount: number;
-  size: 'sm' | 'lg';
+  size: COMPONENT_SIZES.small | COMPONENT_SIZES.large;
 }) => {
   return (
     <div className={`product-price product-price-${size}`}>
