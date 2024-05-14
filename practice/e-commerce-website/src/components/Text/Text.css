@@ -1,3 +1,14 @@
+.text-name {
+  font-weight: 700;
+  text-transform: capitalize;
+  color: #000;
+}
+
+.text-name-default {
+  font-size: 20px;
+  line-height: 27px;
+}
+
 .text-title {
   font-family: 'integralcf';
   font-weight: 700;

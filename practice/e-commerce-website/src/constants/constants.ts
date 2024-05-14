@@ -44,5 +44,6 @@ export const enum INPUT_RADIO_VARIANTS {
  */
 export const enum TEXT_VARIANTS {
   default = 'default',
-  title = 'title'
+  title = 'title',
+  name = 'name'
 }
