@@ -19,6 +19,6 @@ export const FirstStory: Story = {
     productDesc:
       'This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.',
     productColors: ['judge-grey', 'stromboli', 'martinique'],
-    productSizes: ['Small', 'Medium', 'Large', 'X-Large']
+    productSizes: ['small', 'medium', 'large', 'x-large']
   }
 };

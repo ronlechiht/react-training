@@ -19,6 +19,6 @@ export const FirstStory: Story = {
 export const SecondStory: Story = {
   args: {
     variant: 'size',
-    options: ['Small', 'Medium', 'Large', 'X-Large']
+    options: ['small', 'medium', 'large', 'x-large']
   }
 };
