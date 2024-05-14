@@ -1,5 +1,6 @@
 export interface Product {
   productId: string;
+  imageIndexs: string[];
   productName: string;
   productRating: number;
   productPrice: number;

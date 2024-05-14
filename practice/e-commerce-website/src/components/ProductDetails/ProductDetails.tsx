@@ -14,32 +14,22 @@ import { BUTTON_VARIANTS, COMPONENT_SIZES, INPUT_RADIO_VARIANTS } from '../../co
 import './ProductDetails.css';
 import Divider from '../Divider/divider';
 
-const ProductImage = ({ productId }: { productId: string }) => {
-  const [index, setIndex] = useState('01');
+const ProductImage = ({ productId, imageIndexs }: { productId: string; imageIndexs: string[] }) => {
+  const [index, setIndex] = useState(imageIndexs[0]);
   const handleClick = (newIndex: string) => {
     setIndex(newIndex);
   };
   return (
     <div className="product-image">
       <div className="list-product-image">
-        <img
-          src={`images/products/${productId}/01-sm.png`}
-          alt="Image 01"
-          className={index === '01' ? 'product-image-sm selected' : 'product-image-sm'}
-          onClick={() => handleClick('01')}
-        />
-        <img
-          src={`images/products/${productId}/02-sm.png`}
-          alt="Image 02"
-          className={index === '02' ? 'product-image-sm selected' : 'product-image-sm'}
-          onClick={() => handleClick('02')}
-        />
-        <img
-          src={`images/products/${productId}/03-sm.png`}
-          alt="Image 01"
-          className={index === '03' ? 'product-image-sm selected' : 'product-image-sm'}
-          onClick={() => handleClick('03')}
-        />
+        {imageIndexs.map((imageIndex) => (
+          <img
+            src={`images/products/${productId}/${imageIndex}-sm.png`}
+            alt={`Image ${imageIndex}`}
+            className={index === imageIndex ? 'product-image-sm selected' : 'product-image-sm'}
+            onClick={() => handleClick(imageIndex)}
+          />
+        ))}
       </div>
       <img src={`images/products/${productId}/${index}-lg.png`} alt="Big image" />
     </div>
@@ -49,7 +39,7 @@ const ProductImage = ({ productId }: { productId: string }) => {
 const ProductDetails = (product: Product) => {
   return (
     <div className="product-details">
-      <ProductImage productId={product.productId} />
+      <ProductImage productId={product.productId} imageIndexs={product.imageIndexs} />
       <div className="product-infor">
         <p className="product-name">{product.productName}</p>
         <Rating rating={product.productRating} size={COMPONENT_SIZES.large} />

@@ -12,6 +12,7 @@ type Story = StoryObj<typeof ProductDetails>;
 export const FirstStory: Story = {
   args: {
     productId: '10',
+    imageIndexs: ['01', '02', '03'],
     productName: 'One Life Graphic T-Shirt',
     productRating: 4.5,
     productPrice: 300,
