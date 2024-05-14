@@ -19,7 +19,7 @@ const Discount = ({
 }: {
   price: number;
   discount: number;
-  size: COMPONENT_SIZES.small | COMPONENT_SIZES.large;
+  size: COMPONENT_SIZES;
 }) => {
   if (discount) {
     return (
@@ -47,7 +47,7 @@ const Price = ({
 }: {
   price: number;
   discount: number;
-  size: COMPONENT_SIZES.small | COMPONENT_SIZES.large;
+  size: COMPONENT_SIZES;
 }) => {
   return (
     <div className={`product-price product-price-${size}`}>

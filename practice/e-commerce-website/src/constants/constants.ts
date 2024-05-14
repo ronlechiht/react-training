@@ -38,3 +38,11 @@ export const enum INPUT_RADIO_VARIANTS {
   color = 'color',
   size = 'size'
 }
+
+/**
+ * Define variants of Text
+ */
+export const enum TEXT_VARIANTS {
+  default = 'default',
+  title = 'title'
+}

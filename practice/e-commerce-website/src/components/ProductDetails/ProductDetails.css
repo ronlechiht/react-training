@@ -26,14 +26,6 @@
   margin: 0;
 }
 
-.product-details > .product-infor > .product-name {
-  font-family: 'integralcf';
-  font-size: 40px;
-  line-height: 48px;
-  text-transform: uppercase;
-  color: #000;
-}
-
 .product-details > .product-infor > .rating-stars {
   margin: 14px 0;
 }

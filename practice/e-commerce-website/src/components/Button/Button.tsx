@@ -16,8 +16,8 @@ const Button = ({
   size,
   label
 }: {
-  variant?: BUTTON_VARIANTS.primary | BUTTON_VARIANTS.secondary | BUTTON_VARIANTS.outline;
-  size?: COMPONENT_SIZES.small | COMPONENT_SIZES.medium | COMPONENT_SIZES.large;
+  variant?: BUTTON_VARIANTS;
+  size?: COMPONENT_SIZES;
   label: string;
 }) => {
   return (

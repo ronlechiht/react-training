@@ -7,9 +7,15 @@ import Rating from '../Rating/Rating';
 import Price from '../Price/Price';
 import InputRadio from '../InputRadio/InputRadio';
 import Quantity from '../Quantity/Quantity';
+import Text from '../Text/Text';
 import Button from '../Button/Button';
 /* Import constants */
-import { BUTTON_VARIANTS, COMPONENT_SIZES, INPUT_RADIO_VARIANTS } from '../../constants/constants';
+import {
+  BUTTON_VARIANTS,
+  COMPONENT_SIZES,
+  INPUT_RADIO_VARIANTS,
+  TEXT_VARIANTS
+} from '../../constants/constants';
 /* Import CSS */
 import './ProductDetails.css';
 import Divider from '../Divider/divider';
@@ -41,7 +47,11 @@ const ProductDetails = (product: Product) => {
     <div className="product-details">
       <ProductImage productId={product.productId} imageIndexs={product.imageIndexs} />
       <div className="product-infor">
-        <p className="product-name">{product.productName}</p>
+        <Text
+          variant={TEXT_VARIANTS.title}
+          size={COMPONENT_SIZES.medium}
+          content={product.productName}
+        />
         <Rating rating={product.productRating} size={COMPONENT_SIZES.large} />
         <span className="rating-value">{product.productRating}/5</span>
         <Price
@@ -49,7 +59,11 @@ const ProductDetails = (product: Product) => {
           discount={product.productDiscount}
           size={COMPONENT_SIZES.large}
         />
-        <p className="product-desc">{product.productDesc}</p>
+        <Text
+          variant={TEXT_VARIANTS.default}
+          className="product-desc"
+          content={product.productDesc}
+        />
         <Divider />
         <InputRadio variant={INPUT_RADIO_VARIANTS.color} options={product.productColors} />
         <Divider />

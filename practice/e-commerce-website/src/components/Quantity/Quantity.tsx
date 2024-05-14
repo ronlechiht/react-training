@@ -11,13 +11,7 @@ import './Quantity.css';
  * @param size size of Quantity
  * @returns Quantity component
  */
-const Quantity = ({
-  firstQuantity,
-  size
-}: {
-  firstQuantity: number;
-  size: COMPONENT_SIZES.small | COMPONENT_SIZES.large;
-}) => {
+const Quantity = ({ firstQuantity, size }: { firstQuantity: number; size: COMPONENT_SIZES }) => {
   const [count, setCount] = useState(firstQuantity);
 
   const handleIncrease = () => {

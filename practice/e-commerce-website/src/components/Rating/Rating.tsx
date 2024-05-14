@@ -10,13 +10,7 @@ import './Rating.css';
  * @param size size of rating stars
  * @returns Rating component
  */
-const Rating = ({
-  rating,
-  size
-}: {
-  rating: number;
-  size: COMPONENT_SIZES.small | COMPONENT_SIZES.large;
-}) => {
+const Rating = ({ rating, size }: { rating: number; size: COMPONENT_SIZES }) => {
   return (
     <div
       className={['rating-stars', `rating-stars-${size}`].join(' ')}

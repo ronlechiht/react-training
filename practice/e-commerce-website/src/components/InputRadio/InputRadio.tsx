@@ -79,13 +79,7 @@ const ListSize = ({ options }: { options: string[] }) => {
  * @param variant type of input radio (color || size)
  * @returns Color select section or Size select section
  */
-const InputRadio = ({
-  variant,
-  options
-}: {
-  variant: INPUT_RADIO_VARIANTS.color | INPUT_RADIO_VARIANTS.size;
-  options: string[];
-}) => {
+const InputRadio = ({ variant, options }: { variant: INPUT_RADIO_VARIANTS; options: string[] }) => {
   return variant === INPUT_RADIO_VARIANTS.color ? (
     <ListColor options={options} />
   ) : (

@@ -2,6 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import Price from './Price';
 
+import { COMPONENT_SIZES } from '../../constants/constants';
+
 const meta: Meta<typeof Price> = {
   component: Price
 };
@@ -13,6 +15,6 @@ export const FirstStory: Story = {
   args: {
     price: 150,
     discount: 30,
-    size: 'lg'
+    size: COMPONENT_SIZES.large
   }
 };
