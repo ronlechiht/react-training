@@ -6,6 +6,7 @@ import { COMPONENT_SIZES, TEXT_VARIANTS } from '../../constants';
 /* Import components */
 import Text from '../Text/Text';
 import ThreeDotsBtn from '../ThreeDotsBtn/ThreeDotsBtn';
+import { VerifiedIcon } from '../Icon';
 /* Import CSS */
 import './ListFeedback.css';
 
@@ -23,7 +24,7 @@ const FeedbackCard = (feedback: Feedback) => {
       </div>
       <div className="customer-name">
         <Text variant={TEXT_VARIANTS.name} content={feedback.customerName} />
-        <img src="images/components/FeedbackCard/verified.png" alt="verified icon" />
+        <VerifiedIcon />
       </div>
       <Text
         variant={TEXT_VARIANTS.default}
