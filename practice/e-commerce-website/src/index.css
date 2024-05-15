@@ -15,12 +15,12 @@ p {
 /*Base CSS*/
 @font-face {
   font-family: 'satoshi';
-  src: url(../public/fonts/Satoshi-Variable.ttf);
+  src: url(../public/assets/fonts/Satoshi-Variable.ttf);
 }
 
 @font-face {
   font-family: 'integralcf';
-  src: url(../public/fonts/IntegralCF-Bold.ttf);
+  src: url(../public/assets/fonts/IntegralCF-Bold.ttf);
 }
 
 * {

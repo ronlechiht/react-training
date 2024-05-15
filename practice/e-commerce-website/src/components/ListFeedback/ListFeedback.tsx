@@ -26,16 +26,8 @@ const FeedbackCard = (feedback: Feedback) => {
         <Text variant={TEXT_VARIANTS.name} content={feedback.customerName} />
         <VerifiedIcon />
       </div>
-      <Text
-        variant={TEXT_VARIANTS.default}
-        className="customer-comment"
-        content={feedback.customerComment}
-      />
-      <Text
-        variant={TEXT_VARIANTS.default}
-        className="feedback-date"
-        content={`Posted on ${feedback.date}`}
-      />
+      <Text className="customer-comment" content={feedback.customerComment} />
+      <Text className="feedback-date" content={`Posted on ${feedback.date}`} />
     </div>
   );
 };

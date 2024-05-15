@@ -24,6 +24,10 @@
   background-color: #f0f0f0;
 }
 
+.btn-quantity:disabled {
+  opacity: 30%;
+}
+
 .btn-quantity-lg {
   font-size: 24px;
 }

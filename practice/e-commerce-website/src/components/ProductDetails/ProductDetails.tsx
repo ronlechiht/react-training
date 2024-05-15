@@ -18,7 +18,7 @@ import {
 } from '../../constants';
 /* Import CSS */
 import './ProductDetails.css';
-import Divider from '../Divider/divider';
+import Divider from '../Divider/Divider';
 
 const ProductImage = ({ productId, imageIndexs }: { productId: string; imageIndexs: string[] }) => {
   const [index, setIndex] = useState(imageIndexs[0]);
@@ -30,14 +30,14 @@ const ProductImage = ({ productId, imageIndexs }: { productId: string; imageInde
       <div className="list-product-image">
         {imageIndexs.map((imageIndex) => (
           <img
-            src={`images/products/${productId}/${imageIndex}-sm.png`}
+            src={`assets/images/${productId}/${imageIndex}-sm.png`}
             alt={`Image ${imageIndex}`}
             className={index === imageIndex ? 'product-image-sm selected' : 'product-image-sm'}
             onClick={() => handleClick(imageIndex)}
           />
         ))}
       </div>
-      <img src={`images/products/${productId}/${index}-lg.png`} alt="Big image" />
+      <img src={`assets/images/${productId}/${index}-lg.png`} alt="Big image" />
     </div>
   );
 };
@@ -59,11 +59,7 @@ const ProductDetails = (product: Product) => {
           discount={product.productDiscount}
           size={COMPONENT_SIZES.large}
         />
-        <Text
-          variant={TEXT_VARIANTS.default}
-          className="product-desc"
-          content={product.productDesc}
-        />
+        <Text className="product-desc" content={product.productDesc} />
         <Divider />
         <InputRadio variant={INPUT_RADIO_VARIANTS.color} options={product.productColors} />
         <Divider />
