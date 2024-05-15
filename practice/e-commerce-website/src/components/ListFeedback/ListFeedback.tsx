@@ -2,7 +2,7 @@
 import { Feedback } from '../../types/Feedback';
 import Rating from '../Rating/Rating';
 /* Import contants */
-import { COMPONENT_SIZES, TEXT_VARIANTS } from '../../constants/constants';
+import { COMPONENT_SIZES, TEXT_VARIANTS } from '../../constants';
 /* Import components */
 import Text from '../Text/Text';
 import ThreeDotsBtn from '../ThreeDotsBtn/ThreeDotsBtn';
