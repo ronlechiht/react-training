@@ -1,4 +1,4 @@
-import { QUERY_PARAM_KEYS } from '../constants/constants';
+import { QUERY_PARAM_KEYS } from '../constants';
 
 export interface QueryParams {
   [QUERY_PARAM_KEYS.page]: number;

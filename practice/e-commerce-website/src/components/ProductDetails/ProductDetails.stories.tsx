@@ -9,7 +9,7 @@ const meta: Meta<typeof ProductDetails> = {
 export default meta;
 type Story = StoryObj<typeof ProductDetails>;
 
-export const FirstStory: Story = {
+export const Product: Story = {
   args: {
     productId: '10',
     imageIndexs: ['01', '02', '03'],

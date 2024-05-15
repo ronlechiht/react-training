@@ -9,7 +9,7 @@ const meta: Meta<typeof ProductCard> = {
 export default meta;
 type Story = StoryObj<typeof ProductCard>;
 
-export const FirstStory: Story = {
+export const Product: Story = {
   args: {
     productId: '01',
     productName: 'Gradient Graphic T-shirt',

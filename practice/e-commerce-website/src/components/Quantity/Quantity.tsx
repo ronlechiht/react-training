@@ -1,7 +1,7 @@
 /*Import hook*/
 import { useState } from 'react';
 /* Import constants */
-import { COMPONENT_SIZES } from '../../constants/constants';
+import { COMPONENT_SIZES } from '../../constants';
 /*Import CSS*/
 import './Quantity.css';
 
