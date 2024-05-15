@@ -11,7 +11,7 @@ const meta: Meta<typeof Rating> = {
 export default meta;
 type Story = StoryObj<typeof Rating>;
 
-export const FirstStory: Story = {
+export const RatingStars: Story = {
   args: {
     rating: 5,
     size: COMPONENT_SIZES.large

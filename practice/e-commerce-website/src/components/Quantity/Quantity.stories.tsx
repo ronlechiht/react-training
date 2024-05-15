@@ -11,7 +11,7 @@ const meta: Meta<typeof Quantity> = {
 export default meta;
 type Story = StoryObj<typeof Quantity>;
 
-export const FirstStory: Story = {
+export const QuantityBar: Story = {
   args: {
     firstQuantity: 1,
     size: COMPONENT_SIZES.large

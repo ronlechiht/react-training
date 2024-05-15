@@ -11,7 +11,7 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof Button>;
 
-export const FirstStory: Story = {
+export const PrimaryButton: Story = {
   args: {
     variant: BUTTON_VARIANTS.primary,
     size: COMPONENT_SIZES.large,

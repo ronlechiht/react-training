@@ -11,7 +11,7 @@ const meta: Meta<typeof Price> = {
 export default meta;
 type Story = StoryObj<typeof Price>;
 
-export const FirstStory: Story = {
+export const ProductPrice: Story = {
   args: {
     price: 150,
     discount: 30,

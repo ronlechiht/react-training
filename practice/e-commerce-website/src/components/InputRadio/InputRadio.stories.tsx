@@ -11,14 +11,14 @@ const meta: Meta<typeof InputRadio> = {
 export default meta;
 type Story = StoryObj<typeof InputRadio>;
 
-export const FirstStory: Story = {
+export const InputRadioColor: Story = {
   args: {
     variant: INPUT_RADIO_VARIANTS.color,
     options: ['judge-grey', 'stromboli', 'martinique']
   }
 };
 
-export const SecondStory: Story = {
+export const InputRadioSize: Story = {
   args: {
     variant: INPUT_RADIO_VARIANTS.size,
     options: ['small', 'medium', 'large', 'x-large']

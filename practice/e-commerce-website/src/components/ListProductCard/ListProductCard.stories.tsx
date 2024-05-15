@@ -20,7 +20,7 @@ const params = {
 };
 const products = await service.getProducts(params);
 
-export const FirstStory: Story = {
+export const ListProduct: Story = {
   args: {
     products: products
   }
