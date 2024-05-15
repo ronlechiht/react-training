@@ -60,7 +60,7 @@ const feedbacks = [
   }
 ];
 
-export const FirstStory: Story = {
+export const ListFeedbacks: Story = {
   args: {
     feedbacks: feedbacks
   }

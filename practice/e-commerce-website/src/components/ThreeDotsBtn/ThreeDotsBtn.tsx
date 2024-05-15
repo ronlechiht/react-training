@@ -1,7 +1,9 @@
+import { ThreeDotsIcon } from '../Icon';
+
 const ThreeDotsBtn = () => {
   return (
     <button>
-      <img src="images/components/ThreeDotsBtn/three-dots.png" alt="three dots button" />
+      <ThreeDotsIcon />
     </button>
   );
 };
