@@ -1,0 +1,36 @@
+.cart-item {
+  display: flex;
+  column-gap: 16px;
+}
+
+.cart-item-body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-item-infor {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.item-infor-props {
+  text-transform: capitalize;
+  font-size: 14px;
+}
+
+.item-infor-props > span {
+  color: #000;
+}
+
+.cart-item-control {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.cart-item-image {
+  width: 124px;
+  height: 124px;
+}
