@@ -11,31 +11,43 @@ This is used to practice React skill.
 ### Requirements
 
 #### User can see list products
+
 #### User can see product details
+
 #### User can see products in cart
 
 ### How to start
 
-- Clone project : 
+- Clone project :
+
 ```
 git clone https://github.com/ronlechiht/react-training.git
 ```
-- Move in practice folder: 
+
+- Move in practice folder:
+
 ```
 cd react-training/practice/e-commerce-website
 ```
-- Checkout branch : 
+
+- Checkout branch :
+
 ```
 git checkout dev
 ```
-- Install packages: 
+
+- Install packages:
+
 ```
 npm install
 ```
-- Start project: 
+
+- Start project:
+
 ```
 npm run dev
 ```
+
 - Open on web: http://localhost:5173
 
 ## TECHNICAL STACK
@@ -59,4 +71,5 @@ Helps you build and run code
 ### Deploy Tools
 
 #### [vercel](https://ronlechi-e-commerce-website.vercel.app/)
+
 #### [chromatic](https://663b2c6885be49ff1ffef602-etoajozeqy.chromatic.com/)

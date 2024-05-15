@@ -1,6 +1,7 @@
 .btn {
   border-radius: 62px;
   font-size: 16px;
+  line-height: 22px;
 }
 
 .btn-outline {
@@ -22,9 +23,9 @@
 }
 
 .btn-md {
-  padding: 15px 150px;
+  padding: 15px 159px;
 }
 
 .btn-lg {
-  padding: 19px 153px;
+  padding: 17px 160px;
 }

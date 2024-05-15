@@ -16,6 +16,10 @@
   line-height: 32px;
 }
 
+.price-reduced {
+  color: #000;
+}
+
 .price-origin {
   color: #999;
   text-decoration: line-through;
@@ -29,9 +33,9 @@
 }
 
 .product-discount-lg {
-  padding: 6px 14px;
   font-size: 16px;
   line-height: 22px;
+  padding: 6px 14px;
 }
 
 .product-discount-sm {

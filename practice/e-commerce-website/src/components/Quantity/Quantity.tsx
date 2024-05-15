@@ -1,5 +1,7 @@
 /*Import hook*/
 import { useState } from 'react';
+/* Import constants */
+import { COMPONENT_SIZES } from '../../constants';
 /*Import CSS*/
 import './Quantity.css';
 
@@ -9,7 +11,7 @@ import './Quantity.css';
  * @param size size of Quantity
  * @returns Quantity component
  */
-const Quantity = ({ firstQuantity, size }: { firstQuantity: number; size: 'sm' | 'lg' }) => {
+const Quantity = ({ firstQuantity, size }: { firstQuantity: number; size: COMPONENT_SIZES }) => {
   const [count, setCount] = useState(firstQuantity);
 
   const handleIncrease = () => {

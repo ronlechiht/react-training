@@ -1,4 +1,6 @@
 import React from 'react';
+/* Import constants */
+import { COMPONENT_SIZES } from '../../constants';
 /*Import CSS*/
 import './Rating.css';
 
@@ -8,7 +10,7 @@ import './Rating.css';
  * @param size size of rating stars
  * @returns Rating component
  */
-const Rating = ({ rating, size }: { rating: number; size: 'sm' | 'lg' }) => {
+const Rating = ({ rating, size }: { rating: number; size: COMPONENT_SIZES }) => {
   return (
     <div
       className={['rating-stars', `rating-stars-${size}`].join(' ')}
