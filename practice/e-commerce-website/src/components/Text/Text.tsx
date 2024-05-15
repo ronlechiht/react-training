@@ -9,18 +9,18 @@ const Text = ({
   className,
   content
 }: {
-  variant: TEXT_VARIANTS;
+  variant?: TEXT_VARIANTS;
   size?: COMPONENT_SIZES;
   className?: string;
   content: string;
 }) => {
-  return (
-    <p
-      className={`text-${variant} text-${variant}-${size ? size : 'default'} ${className ? className : ''}`}
-    >
-      {content}
-    </p>
-  );
+  return <p className={`text-${variant} text-${variant}-${size} ${className}`}>{content}</p>;
+};
+
+Text.defaultProps = {
+  variant: 'default',
+  size: 'default',
+  className: ''
 };
 
 export default Text;

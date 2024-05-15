@@ -29,7 +29,7 @@
 }
 
 .color-radio:checked + .color-option > .color-circle {
-  background-image: url(./images/selected.webp);
+  background-image: url(../../../public/assets/images/selected.webp);
   background-repeat: no-repeat;
   background-position: center;
 }

@@ -1,4 +1,4 @@
-import './divider.css';
+import './Divider.css';
 
 const Divider = () => {
   return <div className="divider" />;
