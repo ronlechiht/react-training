@@ -1,7 +1,7 @@
 /*Import helpers*/
 import { calcPrice } from '../../helpers/calcPrice';
 /*Import constants */
-import { COMPONENT_SIZES } from '../../constants/constants';
+import { COMPONENT_SIZES } from '../../constants';
 /*Import CSS*/
 import './Price.css';
 

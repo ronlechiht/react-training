@@ -10,7 +10,7 @@ export default meta;
 type Story = StoryObj<typeof ListProductCard>;
 
 import { ProductService } from '../../services/ProductService';
-import { QUERY_PARAM_KEYS } from '../../constants/constants';
+import { QUERY_PARAM_KEYS } from '../../constants';
 const service = new ProductService();
 const params = {
   [QUERY_PARAM_KEYS.page]: 1,

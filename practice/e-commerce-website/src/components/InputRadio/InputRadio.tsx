@@ -1,5 +1,5 @@
 /* Import constants */
-import { INPUT_RADIO_VARIANTS } from '../../constants/constants';
+import { INPUT_RADIO_VARIANTS } from '../../constants';
 /* Inport CSS */
 import './InputRadio.css';
 

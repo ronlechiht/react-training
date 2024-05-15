@@ -1,5 +1,5 @@
 /* Import constants */
-import { COMPONENT_SIZES, TEXT_VARIANTS } from '../../constants/constants';
+import { COMPONENT_SIZES, TEXT_VARIANTS } from '../../constants';
 /* Import CSS */
 import './Text.css';
 

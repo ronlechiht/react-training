@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import InputRadio from './InputRadio';
 
-import { INPUT_RADIO_VARIANTS } from '../../constants/constants';
+import { INPUT_RADIO_VARIANTS } from '../../constants';
 
 const meta: Meta<typeof InputRadio> = {
   component: InputRadio

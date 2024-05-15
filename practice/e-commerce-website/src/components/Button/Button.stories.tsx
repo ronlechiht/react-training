@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import Button from './Button';
-import { BUTTON_VARIANTS } from '../../constants/constants';
-import { COMPONENT_SIZES } from '../../constants/constants';
+import { BUTTON_VARIANTS } from '../../constants';
+import { COMPONENT_SIZES } from '../../constants';
 
 const meta: Meta<typeof Button> = {
   component: Button

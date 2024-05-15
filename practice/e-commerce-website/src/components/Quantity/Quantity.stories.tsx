@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import Quantity from './Quantity';
 
-import { COMPONENT_SIZES } from '../../constants/constants';
+import { COMPONENT_SIZES } from '../../constants';
 
 const meta: Meta<typeof Quantity> = {
   component: Quantity

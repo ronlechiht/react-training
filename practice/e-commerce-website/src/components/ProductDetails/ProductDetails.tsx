@@ -15,7 +15,7 @@ import {
   COMPONENT_SIZES,
   INPUT_RADIO_VARIANTS,
   TEXT_VARIANTS
-} from '../../constants/constants';
+} from '../../constants';
 /* Import CSS */
 import './ProductDetails.css';
 import Divider from '../Divider/divider';

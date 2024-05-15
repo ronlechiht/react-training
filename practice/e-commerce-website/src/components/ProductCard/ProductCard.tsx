@@ -4,7 +4,7 @@ import { Product } from '../../types/Procduct';
 import Rating from '../Rating/Rating';
 import Price from '../Price/Price';
 /* Import constants */
-import { COMPONENT_SIZES } from '../../constants/constants';
+import { COMPONENT_SIZES } from '../../constants';
 /*Import CSS*/
 import './ProductCard.css';
 
