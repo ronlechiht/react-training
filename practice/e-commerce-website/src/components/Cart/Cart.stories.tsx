@@ -17,25 +17,25 @@ const cartProducts = [
     productDiscount: 0,
     productSize: 'large',
     productColor: 'white',
-    productQuantity: 1
+    productQuantity: 2
   },
   {
-    productId: '02',
-    productName: 'gradient graphic t-shirt',
-    productPrice: 145,
+    productId: '05',
+    productName: 'checkered shirt',
+    productPrice: 180,
     productDiscount: 0,
-    productSize: 'large',
-    productColor: 'white',
-    productQuantity: 1
+    productSize: 'medium',
+    productColor: 'red',
+    productQuantity: 3
   },
   {
-    productId: '03',
-    productName: 'gradient graphic t-shirt',
-    productPrice: 145,
-    productDiscount: 0,
+    productId: '04',
+    productName: 'skinny fit jeans',
+    productPrice: 260,
+    productDiscount: 20,
     productSize: 'large',
-    productColor: 'white',
-    productQuantity: 1
+    productColor: 'blue',
+    productQuantity: 4
   }
 ];
 

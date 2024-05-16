@@ -13,19 +13,25 @@ import './Button.css';
 const Button = ({
   variant,
   size,
+  icon,
   label
 }: {
   variant?: BUTTON_VARIANTS;
   size?: COMPONENT_SIZES;
+  icon?: React.ReactNode;
   label: string;
 }) => {
   return (
-    <button
-      className={`btn ${variant ? `btn-${variant}` : 'btn-primary'} ${size ? `btn-${size}` : ''}`}
-    >
+    <button className={`btn btn-${variant} btn-${size}`}>
       {label}
+      {icon && icon}
     </button>
   );
+};
+
+Button.defaultProps = {
+  variant: BUTTON_VARIANTS.primary,
+  size: COMPONENT_SIZES.small
 };
 
 export default Button;

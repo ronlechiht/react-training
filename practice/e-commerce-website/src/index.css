@@ -4,12 +4,20 @@ button {
   background-color: #fff;
 }
 
+ul {
+  margin: 0;
+}
+
 li {
   list-style-type: none;
 }
 
 p {
   margin: 0;
+}
+
+input {
+  border: none;
 }
 
 /*Base CSS*/

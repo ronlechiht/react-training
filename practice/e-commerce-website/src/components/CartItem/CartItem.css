@@ -6,6 +6,7 @@
 .cart-item-body {
   display: flex;
   justify-content: space-between;
+  flex-grow: 1;
 }
 
 .cart-item-infor {
