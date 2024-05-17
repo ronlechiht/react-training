@@ -1,11 +1,13 @@
 /*Reset CSS*/
 button {
   border: none;
-  background-color: #fff;
+  background-color: transparent;
+  padding: 0;
 }
 
 ul {
   margin: 0;
+  padding: 0;
 }
 
 li {
@@ -18,6 +20,10 @@ p {
 
 input {
   border: none;
+}
+
+h1 {
+  margin: 0;
 }
 
 /*Base CSS*/
@@ -34,4 +40,8 @@ input {
 * {
   font-family: 'satoshi', sans-serif;
   color: #00000099;
+}
+
+.container {
+  padding: 0 100px;
 }
