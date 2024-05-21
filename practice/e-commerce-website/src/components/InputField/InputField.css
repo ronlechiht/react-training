@@ -11,6 +11,7 @@
   background-color: #f0f0f0;
   padding-left: 12px;
   font-size: 16px;
+  width: 100%;
 }
 
 .input-field input:focus {

@@ -1,9 +1,11 @@
+/*Import types*/
+import { LinkProps } from '../../types/LinkProps';
 /*Import components*/
 import Dropdown from '../Dropdown/Dropdown';
 /*Import CSS*/
-import './NavBar.css';
+import './Nav.css';
 
-export const NavMenuItem = ({ label, path }: { label: string; path: string }) => {
+export const NavMenuItem = ({ label, path }: LinkProps) => {
   return (
     <li className="nav-menu-item">
       <a href={path}>{label}</a>
@@ -11,7 +13,7 @@ export const NavMenuItem = ({ label, path }: { label: string; path: string }) =>
   );
 };
 
-const NavBar = () => {
+export const NavBar = () => {
   const options = [
     <NavMenuItem label="option 1" path="#" />,
     <NavMenuItem label="option 2" path="#" />
@@ -28,4 +30,12 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export const FooterNavList = ({ linkProps }: { linkProps: LinkProps[] }) => {
+  return (
+    <ul className="footer-nav-list">
+      {linkProps.map((linkProp) => (
+        <NavMenuItem label={linkProp.label} path={linkProp.path} />
+      ))}
+    </ul>
+  );
+};

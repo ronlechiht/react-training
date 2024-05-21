@@ -11,3 +11,14 @@
   align-items: center;
   column-gap: 4px;
 }
+
+.footer-nav-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 19px;
+}
+
+.footer-nav-list a {
+  color: #00000099;
+  line-height: 18px;
+}

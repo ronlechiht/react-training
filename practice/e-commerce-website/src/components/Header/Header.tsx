@@ -4,7 +4,7 @@ import { TEXT_VARIANTS, COMPONENT_SIZES } from '../../constants';
 import { CloseIcon, SearchIcon, CartIcon, AccountIcon } from '../Icon';
 import Text from '../Text/Text';
 import InputField from '../InputField/InputField';
-import NavBar from '../NavBar/NavBar';
+import { NavBar } from '../Nav/Nav';
 /*Import CSS*/
 import './Header.css';
 

@@ -29,12 +29,12 @@ h1 {
 /*Base CSS*/
 @font-face {
   font-family: 'satoshi';
-  src: url(../public/assets/fonts/Satoshi-Variable.ttf);
+  src: url(/assets/fonts/Satoshi-Variable.ttf);
 }
 
 @font-face {
   font-family: 'integralcf';
-  src: url(../public/assets/fonts/IntegralCF-Bold.ttf);
+  src: url(/assets/fonts/IntegralCF-Bold.ttf);
 }
 
 * {
