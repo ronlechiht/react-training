@@ -1,5 +1,7 @@
 /* Import constants */
 import { INPUT_RADIO_VARIANTS } from '../../constants';
+/*Import components*/
+import Text from '../Text/Text';
 /* Inport CSS */
 import './InputRadio.css';
 
@@ -46,7 +48,7 @@ const SizeOption = ({ size }: { size: string }) => {
 const ListColor = ({ options }: { options: string[] }) => {
   return (
     <>
-      <p className="select-title">Select Colors</p>
+      <Text className="select-title">Select Colors</Text>
       <div className="list-color">
         {options.map((option) => (
           <ColorOption color={option} key={option} />
@@ -64,7 +66,7 @@ const ListColor = ({ options }: { options: string[] }) => {
 const ListSize = ({ options }: { options: string[] }) => {
   return (
     <>
-      <p className="select-title">Choose Size</p>
+      <Text className="select-title">Choose Size</Text>
       <div className="list-size">
         {options.map((option) => (
           <SizeOption size={option} key={option} />

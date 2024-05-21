@@ -47,3 +47,11 @@ export const enum TEXT_VARIANTS {
   title = 'title',
   name = 'name'
 }
+
+/**
+ * Define variants of Currency
+ */
+export const enum CURRENCY_VARIANTS {
+  default = 'default',
+  discount = 'discount'
+}

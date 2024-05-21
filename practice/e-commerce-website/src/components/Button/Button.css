@@ -2,6 +2,8 @@
   border-radius: 62px;
   font-size: 16px;
   line-height: 22px;
+  display: flex;
+  column-gap: 12px;
 }
 
 .btn-outline {
@@ -19,7 +21,7 @@
 }
 
 .btn-sm {
-  padding: 12px 88px;
+  padding: 12px 38px;
 }
 
 .btn-md {
@@ -27,5 +29,5 @@
 }
 
 .btn-lg {
-  padding: 17px 160px;
+  padding: 18px 155px;
 }

@@ -1,0 +1,14 @@
+.cart {
+  display: flex;
+  align-items: start;
+  column-gap: 20px;
+}
+
+.list-cart-product {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  padding: 20px 24px;
+  border: 1px solid #0000001a;
+  border-radius: 20px;
+}
