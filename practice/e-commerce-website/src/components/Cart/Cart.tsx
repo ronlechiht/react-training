@@ -5,17 +5,12 @@ import CartItem from '../CartItem/CartItem';
 import CartSummary from '../CartSummary/CartSummary';
 import Divider from '../Divider/Divider';
 /* Import helpers */
-import { calcPrice } from '../../helpers/calcPrice';
+import { calcSubTotal } from '../../helpers/calcPrice';
 /* Import CSS */
 import './Cart.css';
 
 const Cart = ({ cartProducts }: { cartProducts: CartProduct[] }) => {
-  let subtotal = 0;
-  cartProducts.map((cartProduct) => {
-    subtotal +=
-      calcPrice(cartProduct.productPrice, cartProduct.productDiscount) *
-      cartProduct.productQuantity;
-  });
+  const subtotal = calcSubTotal(cartProducts);
   return (
     <div className="cart">
       <ul className="list-cart-product">
