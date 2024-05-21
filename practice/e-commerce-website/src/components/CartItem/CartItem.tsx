@@ -20,7 +20,7 @@ const CartItem = (cartProduct: CartProduct) => {
       />
       <div className="cart-item-body">
         <div className="cart-item-infor">
-          <Text variant={TEXT_VARIANTS.name} content={cartProduct.productName} />
+          <Text variant={TEXT_VARIANTS.name}>{cartProduct.productName}</Text>
           <p className="item-infor-props">
             <span>Size: </span>
             {cartProduct.productSize}

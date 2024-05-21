@@ -47,11 +47,9 @@ const ProductDetails = (product: Product) => {
     <div className="product-details">
       <ProductImage productId={product.productId} imageIndexs={product.imageIndexs} />
       <div className="product-infor">
-        <Text
-          variant={TEXT_VARIANTS.title}
-          size={COMPONENT_SIZES.medium}
-          content={product.productName}
-        />
+        <Text variant={TEXT_VARIANTS.title} size={COMPONENT_SIZES.medium}>
+          {product.productName}
+        </Text>
         <Rating rating={product.productRating} size={COMPONENT_SIZES.large} />
         <span className="rating-value">{product.productRating}/5</span>
         <Price
@@ -59,7 +57,7 @@ const ProductDetails = (product: Product) => {
           discount={product.productDiscount}
           size={COMPONENT_SIZES.large}
         />
-        <Text className="product-desc" content={product.productDesc} />
+        <Text className="product-desc">{product.productDesc}</Text>
         <Divider />
         <InputRadio variant={INPUT_RADIO_VARIANTS.color} options={product.productColors} />
         <Divider />

@@ -23,11 +23,11 @@ const FeedbackCard = (feedback: Feedback) => {
         <ThreeDotsBtn />
       </div>
       <div className="customer-name">
-        <Text variant={TEXT_VARIANTS.name} content={feedback.customerName} />
+        <Text variant={TEXT_VARIANTS.name}>{feedback.customerName}</Text>
         <VerifiedIcon />
       </div>
-      <Text className="customer-comment" content={feedback.customerComment} />
-      <Text className="feedback-date" content={`Posted on ${feedback.date}`} />
+      <Text className="customer-comment">{feedback.customerComment}</Text>
+      <Text className="feedback-date">{`Posted on ${feedback.date}`}</Text>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 /*Import types*/
-import { CartProduct } from "../types/CartProduct";
+import { CartProduct } from '../types/CartProduct';
 
 /**
  *
@@ -29,7 +29,7 @@ export const calcSubTotal = (cartProducts: CartProduct[]) => {
       cartProduct.productQuantity;
   });
   return result;
-}
+};
 
 /**
  *

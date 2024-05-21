@@ -22,7 +22,9 @@ const CartSummary = ({
 }) => {
   return (
     <div className="cart-summary">
-      <Text variant={TEXT_VARIANTS.name} content={'Order Summary'} className="cart-summary-title" />
+      <Text variant={TEXT_VARIANTS.name} className="cart-summary-title">
+        order summary
+      </Text>
       <div className="cart-summary-props">
         <p>
           Subtotal<span>${subtotal}</span>
