@@ -7,14 +7,14 @@ const Text = ({
   variant,
   size,
   className,
-  content
+  children
 }: {
   variant?: TEXT_VARIANTS;
   size?: COMPONENT_SIZES;
   className?: string;
-  content: string;
+  children: React.ReactNode;
 }) => {
-  return <p className={`text-${variant} text-${variant}-${size} ${className}`}>{content}</p>;
+  return <p className={`text-${variant} text-${variant}-${size} ${className}`}>{children}</p>;
 };
 
 Text.defaultProps = {

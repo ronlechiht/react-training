@@ -1,3 +1,6 @@
+/*Import types*/
+import { CartProduct } from '../types/CartProduct';
+
 /**
  *
  * @param price Origin price of product
@@ -16,6 +19,16 @@ export const calcDiscount = (price: number, discount: number) => {
  */
 export const calcPrice = (price: number, discount: number) => {
   return price - calcDiscount(price, discount);
+};
+
+export const calcSubTotal = (cartProducts: CartProduct[]) => {
+  let result = 0;
+  cartProducts.map((cartProduct) => {
+    result +=
+      calcPrice(cartProduct.productPrice, cartProduct.productDiscount) *
+      cartProduct.productQuantity;
+  });
+  return result;
 };
 
 /**

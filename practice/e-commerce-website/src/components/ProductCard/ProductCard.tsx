@@ -3,6 +3,7 @@ import { Product } from '../../types/Procduct';
 /*Import components*/
 import Rating from '../Rating/Rating';
 import Price from '../Price/Price';
+import Text from '../Text/Text';
 /* Import constants */
 import { COMPONENT_SIZES } from '../../constants';
 /*Import CSS*/
@@ -13,7 +14,7 @@ const ProductCard = (product: Product) => {
     <div className="product-card">
       <img src={`assets/images/${product.productId}.webp`} alt="product image" />
       <div className="product-infor">
-        <p className="product-name">{product.productName}</p>
+        <Text className="product-name">{product.productName}</Text>
         <Rating rating={product.productRating} size={COMPONENT_SIZES.small} />
         <span className="rating-value">{product.productRating}/5</span>
         <Price
