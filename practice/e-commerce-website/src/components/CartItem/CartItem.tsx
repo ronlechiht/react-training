@@ -21,14 +21,14 @@ const CartItem = (cartProduct: CartProduct) => {
       <div className="cart-item-body">
         <div className="cart-item-infor">
           <Text variant={TEXT_VARIANTS.name}>{cartProduct.productName}</Text>
-          <p className="item-infor-props">
+          <Text className="item-infor-props">
             <span>Size: </span>
             {cartProduct.productSize}
-          </p>
-          <p className="item-infor-props">
+          </Text>
+          <Text className="item-infor-props">
             <span>Color: </span>
             {cartProduct.productColor}
-          </p>
+          </Text>
           <Price
             price={cartProduct.productPrice}
             discount={cartProduct.productDiscount}

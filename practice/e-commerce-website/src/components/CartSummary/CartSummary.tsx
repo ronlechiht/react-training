@@ -26,20 +26,20 @@ const CartSummary = ({
         order summary
       </Text>
       <div className="cart-summary-props">
-        <p>
+        <Text>
           Subtotal<span>${subtotal}</span>
-        </p>
-        <p className="cart-summary-discount">
+        </Text>
+        <Text className="cart-summary-discount">
           Discount (-{discount}%)`<span>-${calcDiscount(subtotal, discount)}</span>
-        </p>
-        <p>
+        </Text>
+        <Text>
           Delivery Fee<span>${deliveryFee}</span>
-        </p>
+        </Text>
         <Divider />
-        <p className="cart-summary-total">
+        <Text className="cart-summary-total">
           Total
           <span>${calcSummaryTotal(subtotal, calcDiscount(subtotal, discount), deliveryFee)}</span>
-        </p>
+        </Text>
       </div>
       <div className="promo-input">
         <InputField icon={<DiscountIcon />} placeholder="Add promo code" />
