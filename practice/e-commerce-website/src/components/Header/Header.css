@@ -27,20 +27,6 @@
   border-bottom: 1px solid #0000001a;
 }
 
-.nav-menu-list {
-  display: flex;
-  column-gap: 24px;
-}
-
-.nav-menu-item > a {
-  text-decoration: none;
-  text-transform: capitalize;
-  color: #000;
-  display: flex;
-  align-items: center;
-  column-gap: 4px;
-}
-
 .header-icons {
   display: flex;
   align-items: center;
