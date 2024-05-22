@@ -1,4 +1,8 @@
 /*Reset CSS*/
+body {
+  margin: 0;
+}
+
 button {
   border: none;
   background-color: transparent;
@@ -37,7 +41,7 @@ h1 {
   src: url(/assets/fonts/IntegralCF-Bold.ttf);
 }
 
-* {
+#root {
   font-family: 'satoshi', sans-serif;
   color: #00000099;
 }
