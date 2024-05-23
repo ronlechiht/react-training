@@ -33,6 +33,7 @@ const ProductImage = ({ productId, imageIndexs }: { productId: string; imageInde
             src={`/assets/images/${productId}/${imageIndex}-sm.png`}
             alt={`Image ${imageIndex}`}
             className={index === imageIndex ? 'product-image-sm selected' : 'product-image-sm'}
+            key={imageIndex}
             onClick={() => handleClick(imageIndex)}
           />
         ))}

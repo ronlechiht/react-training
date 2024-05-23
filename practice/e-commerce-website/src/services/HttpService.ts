@@ -25,7 +25,7 @@ export class HttpService {
   }
 
   getId<T>(id: string): Promise<T> {
-    let path: string = this.baseAPI + id;
+    let path: string = `${this.baseAPI}/${id}`;
     return this.request(path, 'GET');
   }
 }

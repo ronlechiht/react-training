@@ -5,9 +5,15 @@ import ProductCard from '../ProductCard/ProductCard';
 /*Import CSS*/
 import './ListProductCard.css';
 
-const ListProductCard = ({ products }: { products: Product[] }) => {
+const ListProductCard = ({
+  products,
+  variant = 'default'
+}: {
+  products: Product[];
+  variant?: string;
+}) => {
   return (
-    <ul className="list-product-card">
+    <ul className={`list-product-card-${variant}`}>
       {products.map((product) => (
         <li key={product.productId}>
           <ProductCard {...product} />
