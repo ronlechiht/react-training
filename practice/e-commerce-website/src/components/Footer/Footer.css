@@ -1,0 +1,47 @@
+.footer {
+  background-color: #f0f0f0;
+  padding-bottom: 90px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #0000001a;
+  padding: 50px 0;
+}
+
+.footer-logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footer-shop-describe {
+  font-size: 14px;
+  max-width: 26ch;
+}
+
+.list-social,
+.list-payment {
+  display: flex;
+  column-gap: 12px;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  row-gap: 26px;
+}
+
+.footer-nav-title {
+  text-transform: uppercase;
+  font-weight: 500;
+  line-height: 18px;
+  color: #000;
+}
+
+.footer-copyright-payment {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}

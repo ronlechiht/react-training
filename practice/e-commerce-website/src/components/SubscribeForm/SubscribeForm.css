@@ -1,0 +1,20 @@
+.subscribe-form {
+  display: flex;
+  justify-content: space-between;
+  background-color: #000;
+  padding: 36px 64px;
+  border-radius: 20px;
+}
+
+.subscribe-form-title {
+  max-width: 20ch;
+  color: #fff;
+  line-height: 45px;
+}
+
+.subscribe-form-control {
+  display: flex;
+  flex-direction: column;
+  row-gap: 14px;
+  width: 30%;
+}

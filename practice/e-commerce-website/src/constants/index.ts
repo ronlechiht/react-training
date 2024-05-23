@@ -1,3 +1,5 @@
+import { LinkProps } from '../types/LinkProps';
+
 const API_URL = 'https://ronlechi-e-commerce-json-server.vercel.app';
 //const API_URL = 'http://localhost:3000'
 export const PRODUCTS_API = API_URL + '/products';
@@ -55,3 +57,39 @@ export const enum CURRENCY_VARIANTS {
   default = 'default',
   discount = 'discount'
 }
+
+export const COMPANY_NAV_LIST: LinkProps[] = [
+  { label: 'about', path: '#' },
+  { label: 'features', path: '#' },
+  { label: 'works', path: '#' },
+  { label: 'career', path: '#' }
+];
+
+export const HELP_NAV_LIST: LinkProps[] = [
+  { label: 'customer support', path: '#' },
+  { label: 'delivery details', path: '#' },
+  { label: 'term & conditions', path: '#' },
+  { label: 'privacy policy', path: '#' }
+];
+
+export const FAQ_NAV_LIST: LinkProps[] = [
+  { label: 'account', path: '#' },
+  { label: 'manage deliveries', path: '#' },
+  { label: 'orders', path: '#' },
+  { label: 'payments', path: '#' }
+];
+
+export const RESOURCES_NAV_LIST: LinkProps[] = [
+  { label: 'free ebooks', path: '#' },
+  { label: 'development tutorial', path: '#' },
+  { label: 'how to - blog', path: '#' },
+  { label: 'youtube playlist', path: '#' }
+];
+
+export const PAYMENT_BADGE_LIST = [
+  { url: 'visa.svg', alt: 'visa badge' },
+  { url: 'mastercard.svg', alt: 'mastercard badge' },
+  { url: 'paypal.svg', alt: 'paypal badge' },
+  { url: 'apple-pay.svg', alt: 'apple pay badge' },
+  { url: 'g-pay.svg', alt: 'google pay badge' }
+];
