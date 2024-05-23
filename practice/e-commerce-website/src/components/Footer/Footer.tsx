@@ -66,8 +66,8 @@ const Footer = () => {
         <div className="footer-copyright-payment">
           <Text className="footer-copyright">Shop.co © 2000-2023, All Rights Reserved</Text>
           <ul className="list-payment">
-            {PAYMENT_BADGE_LIST.map((badge) => (
-              <li>
+            {PAYMENT_BADGE_LIST.map((badge, index) => (
+              <li key={index}>
                 <Badge {...badge} />
               </li>
             ))}

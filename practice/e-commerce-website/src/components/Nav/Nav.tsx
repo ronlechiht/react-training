@@ -6,11 +6,7 @@ import Dropdown from '../Dropdown/Dropdown';
 import './Nav.css';
 
 export const NavMenuItem = ({ label, path }: LinkProps) => {
-  return (
-    <li className="nav-menu-item">
-      <a href={path}>{label}</a>
-    </li>
-  );
+  return <a href={path}>{label}</a>;
 };
 
 export const NavBar = () => {
@@ -22,9 +18,15 @@ export const NavBar = () => {
     <nav>
       <ul className="nav-menu-list">
         <Dropdown label="shop" options={options} />
-        <NavMenuItem label="on sale" path="#" />
-        <NavMenuItem label="new arrivals" path="#" />
-        <NavMenuItem label="brands" path="#" />
+        <li className="nav-menu-item">
+          <NavMenuItem label="on sale" path="#" />
+        </li>
+        <li className="nav-menu-item">
+          <NavMenuItem label="new arrivals" path="#" />
+        </li>
+        <li className="nav-menu-item">
+          <NavMenuItem label="brands" path="#" />
+        </li>
       </ul>
     </nav>
   );
@@ -33,8 +35,10 @@ export const NavBar = () => {
 export const FooterNavList = ({ linkProps }: { linkProps: LinkProps[] }) => {
   return (
     <ul className="footer-nav-list">
-      {linkProps.map((linkProp) => (
-        <NavMenuItem label={linkProp.label} path={linkProp.path} />
+      {linkProps.map((linkProp, index) => (
+        <li className="nav-menu-item" key={index}>
+          <NavMenuItem label={linkProp.label} path={linkProp.path} />
+        </li>
       ))}
     </ul>
   );

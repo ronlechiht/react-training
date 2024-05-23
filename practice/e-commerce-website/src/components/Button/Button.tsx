@@ -11,8 +11,8 @@ import './Button.css';
  * @returns Button component
  */
 const Button = ({
-  variant,
-  size,
+  variant = BUTTON_VARIANTS.primary,
+  size = COMPONENT_SIZES.small,
   icon,
   label
 }: {
@@ -27,11 +27,6 @@ const Button = ({
       {icon && icon}
     </button>
   );
-};
-
-Button.defaultProps = {
-  variant: BUTTON_VARIANTS.primary,
-  size: COMPONENT_SIZES.small
 };
 
 export default Button;
