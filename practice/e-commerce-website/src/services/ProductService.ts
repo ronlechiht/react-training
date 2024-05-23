@@ -6,7 +6,7 @@ import { PRODUCTS_API } from '../constants';
 export class ProductService {
   service = new HttpService(PRODUCTS_API);
 
-  async getProducts(params: QueryParams) {
+  async getProducts(params?: QueryParams) {
     return this.service.get<Product[]>(params);
   }
 }
