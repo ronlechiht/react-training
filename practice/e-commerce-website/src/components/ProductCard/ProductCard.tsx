@@ -12,7 +12,7 @@ import './ProductCard.css';
 const ProductCard = (product: Product) => {
   return (
     <div className="product-card">
-      <img src={`assets/images/${product.productId}.webp`} alt="product image" />
+      <img src={`/assets/images/${product.productId}.webp`} alt="product image" />
       <div className="product-infor">
         <Text className="product-name">{product.productName}</Text>
         <Rating rating={product.productRating} size={COMPONENT_SIZES.small} />

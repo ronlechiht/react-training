@@ -9,4 +9,8 @@ export class ProductService {
   async getProducts(params?: QueryParams) {
     return this.service.get<Product[]>(params);
   }
+
+  async getProductById(id: string) {
+    return this.service.getId<Product>(id);
+  }
 }

@@ -30,14 +30,15 @@ const ProductImage = ({ productId, imageIndexs }: { productId: string; imageInde
       <div className="list-product-image">
         {imageIndexs.map((imageIndex) => (
           <img
-            src={`assets/images/${productId}/${imageIndex}-sm.png`}
+            src={`/assets/images/${productId}/${imageIndex}-sm.png`}
             alt={`Image ${imageIndex}`}
             className={index === imageIndex ? 'product-image-sm selected' : 'product-image-sm'}
+            key={imageIndex}
             onClick={() => handleClick(imageIndex)}
           />
         ))}
       </div>
-      <img src={`assets/images/${productId}/${index}-lg.png`} alt="Big image" />
+      <img src={`/assets/images/${productId}/${index}-lg.png`} alt="Big image" />
     </div>
   );
 };

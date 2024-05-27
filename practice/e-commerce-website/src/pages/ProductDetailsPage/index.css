@@ -1,0 +1,49 @@
+.product-details-page-body {
+  padding: 80px 100px;
+}
+
+.list-feedback-header {
+  display: flex;
+  align-items: stretch;
+  column-gap: 10px;
+  padding: 24px 0;
+}
+
+.feedbacks-title {
+  flex-grow: 1;
+  line-height: 48px;
+}
+
+.feedbacks-title span {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  color: #000;
+  text-transform: capitalize;
+}
+
+.feedback-filter-select,
+.feedback-sort-select {
+  display: flex;
+  align-items: center;
+  background-color: #f0f0f0;
+  padding: 0px 12px;
+  border-radius: 62px;
+}
+
+.feedback-sort-select {
+  border-right: 12px solid transparent;
+}
+
+.btn-load-reviews {
+  margin: 36px auto;
+}
+
+.recommend-product {
+  margin-top: 64px;
+}
+
+.recommend-product-title {
+  margin-bottom: 55px;
+  text-align: center;
+}

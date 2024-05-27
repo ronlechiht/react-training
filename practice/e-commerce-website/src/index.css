@@ -30,6 +30,10 @@ h1 {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 /*Base CSS*/
 @font-face {
   font-family: 'satoshi';

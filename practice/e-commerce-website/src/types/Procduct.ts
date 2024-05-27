@@ -1,3 +1,5 @@
+import { Feedback } from './Feedback';
+
 export interface Product {
   productId: string;
   imageIndexs: string[];
@@ -9,4 +11,5 @@ export interface Product {
   productColors: string[];
   productSizes: string[];
   sold: number;
+  feedbacks: Feedback[];
 }

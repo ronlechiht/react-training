@@ -1,6 +1,7 @@
 .product-details {
   display: flex;
-  column-gap: 40px;
+  justify-content: space-between;
+  column-gap: 30px;
 }
 
 .product-image {
@@ -22,6 +23,11 @@
   justify-content: space-between;
 }
 
+.list-product-image img {
+  width: 150px;
+  height: 166px;
+}
+
 .product-details > .product-infor {
   margin: 0;
 }
@@ -32,10 +38,10 @@
 
 .product-desc {
   margin-top: 10px;
-  max-width: 50ch;
 }
 
 .quantity-button-container {
   display: flex;
+  justify-content: space-between;
   column-gap: 20px;
 }

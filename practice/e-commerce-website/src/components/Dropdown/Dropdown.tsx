@@ -11,11 +11,11 @@ const Dropdown = ({ label, options }: { label: string; options: React.ReactNode[
         {label}
         <DownArrowIcon />
       </Text>
-      <div className="dropdown-menu">
-        {options.map((option) => (
-          <>{option}</>
+      <ul className="dropdown-menu">
+        {options.map((option, index) => (
+          <li key={index}>{option}</li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 };

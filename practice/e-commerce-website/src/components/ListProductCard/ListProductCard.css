@@ -1,5 +1,10 @@
-.list-product-card {
+.list-product-card-default {
   display: grid;
   grid-template-columns: auto auto auto;
   row-gap: 36px;
+}
+
+.list-product-card-recommend {
+  display: flex;
+  justify-content: space-between;
 }
