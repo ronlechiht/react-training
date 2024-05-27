@@ -32,7 +32,7 @@ const ProductDetailsPage = () => {
       <div className="rating-feedback-tab">
         <div className="list-feedback-header">
           <Text className="feedbacks-title">
-            <span>all reviews </span>({feedbacks.length})
+            <span>all reviews </span>({feedbacks!.length})
           </Text>
           <div className="feedback-filter-select">
             <FilterIcon alternative />
@@ -42,7 +42,7 @@ const ProductDetailsPage = () => {
           </select>
           <Button label="Write a Review" />
         </div>
-        <ListFeedback feedbacks={feedbacks} />
+        <ListFeedback feedbacks={feedbacks!} />
         <Button
           variant={BUTTON_VARIANTS.outline}
           label="Load More Reviews"

@@ -11,6 +11,7 @@ type Story = StoryObj<typeof ListProductCard>;
 
 const products = [
   {
+    id: '01',
     productId: '01',
     imageIndexs: ['01', '02', '03'],
     productName: 'Gradient Graphic T-shirt',
@@ -24,6 +25,7 @@ const products = [
     sold: 100
   },
   {
+    id: '02',
     productId: '02',
     imageIndexs: ['01', '02', '03'],
     productName: 'Polo with Tipping Details',
@@ -37,6 +39,7 @@ const products = [
     sold: 90
   },
   {
+    id: '03',
     productId: '03',
     imageIndexs: ['01', '02', '03'],
     productName: 'Black Striped T-shirt',
@@ -50,6 +53,7 @@ const products = [
     sold: 80
   },
   {
+    id: '04',
     productId: '04',
     imageIndexs: ['01', '02', '03'],
     productName: 'Skinny Fit Jeans',
@@ -63,6 +67,7 @@ const products = [
     sold: 70
   },
   {
+    id: '05',
     productId: '05',
     imageIndexs: ['01', '02', '03'],
     productName: 'Checkered Shirt',
@@ -76,6 +81,7 @@ const products = [
     sold: 60
   },
   {
+    id: '06',
     productId: '06',
     imageIndexs: ['01', '02', '03'],
     productName: 'Sleeve Striped T-shirt',
@@ -89,6 +95,7 @@ const products = [
     sold: 100
   },
   {
+    id: '07',
     productId: '07',
     imageIndexs: ['01', '02', '03'],
     productName: 'Vertical Striped Shirt',
@@ -102,6 +109,7 @@ const products = [
     sold: 90
   },
   {
+    id: '08',
     productId: '08',
     imageIndexs: ['01', '02', '03'],
     productName: 'Courage Graphic T-shirt',
@@ -115,6 +123,7 @@ const products = [
     sold: 80
   },
   {
+    id: '09',
     productId: '09',
     imageIndexs: ['01', '02', '03'],
     productName: 'Loose Fit Bermuda Shorts',
