@@ -1,14 +1,19 @@
+/* Import constants */
+import { BUTTON_VARIANTS, COMPONENT_SIZES, QUERY_PARAM_KEYS, TEXT_VARIANTS } from '../../constants';
+/* Import types */
+import { QueryParams } from '../../types/QueryParams';
+/* Import components */
 import ListFeedback from '../../components/ListFeedback/ListFeedback';
 import ListProductCard from '../../components/ListProductCard/ListProductCard';
 import ProductDetails from '../../components/ProductDetails/ProductDetails';
 import Tabs from '../../components/Tabs';
 import Text from '../../components/Text/Text';
-import { ProductService } from '../../services/ProductService';
-import { BUTTON_VARIANTS, COMPONENT_SIZES, QUERY_PARAM_KEYS, TEXT_VARIANTS } from '../../constants';
-import './index.css';
-import { QueryParams } from '../../types/QueryParams';
 import { FilterIcon } from '../../components/Icon';
 import Button from '../../components/Button/Button';
+/* Import services */
+import { ProductService } from '../../services/ProductService';
+/* Import CSS */
+import './index.css';
 
 const service = new ProductService();
 const product = await service.getProductById('10');

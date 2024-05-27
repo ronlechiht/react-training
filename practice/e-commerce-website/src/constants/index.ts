@@ -3,6 +3,7 @@ import { LinkProps } from '../types/LinkProps';
 //const API_URL = 'https://ronlechi-e-commerce-json-server.vercel.app';
 const API_URL = 'http://localhost:3000';
 export const PRODUCTS_API = API_URL + '/products';
+export const CART_API = API_URL + '/cart';
 
 /**
  * query param keys of Json-server
