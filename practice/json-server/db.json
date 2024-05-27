@@ -1,4 +1,37 @@
 {
+  "cart": [
+    {
+      "id": 1,
+      "productId": "01",
+      "productName": "Gradient Graphic T-shirt",
+      "productPrice": 145,
+      "productDiscount": 0,
+      "productSize": "medium",
+      "productColor": "white",
+      "productQuantity": 2
+    },
+    {
+      "id": 2,
+      "productId": "02",
+      "productName": "Polo with Tipping Details",
+      "productPrice": 180,
+      "productDiscount": 0,
+      "productSize": "large",
+      "productColor": "red",
+      "productQuantity": 4
+    },
+    {
+      "id": 3,
+      "productId": "03",
+      "productName": "Black Striped T-shirt",
+      "productPrice": 150,
+      "productDiscount": 30,
+      "productSize": "small",
+      "productColor": "green",
+      "productQuantity": 3
+    }
+  ],
+
   "products": [
     {
       "id": "01",

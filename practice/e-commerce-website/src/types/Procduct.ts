@@ -1,6 +1,7 @@
 import { Feedback } from './Feedback';
 
 export interface Product {
+  id: string;
   productId: string;
   imageIndexs: string[];
   productName: string;

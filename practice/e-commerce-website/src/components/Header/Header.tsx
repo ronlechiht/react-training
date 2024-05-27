@@ -14,6 +14,9 @@ const Header = () => {
   const homePage = () => {
     navigate('/');
   };
+  const cartPage = () => {
+    navigate('/cart');
+  };
   return (
     <header>
       <div className="discount-notification">
@@ -37,7 +40,7 @@ const Header = () => {
           <NavBar />
           <InputField icon={<SearchIcon />} placeholder="Search for products..." />
           <div className="header-icons">
-            <button>
+            <button onClick={cartPage}>
               <CartIcon />
             </button>
             <button>
