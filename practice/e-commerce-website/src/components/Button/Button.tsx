@@ -14,15 +14,17 @@ const Button = ({
   variant = BUTTON_VARIANTS.primary,
   size = COMPONENT_SIZES.small,
   icon,
-  label
+  label,
+  className = ''
 }: {
   variant?: BUTTON_VARIANTS;
   size?: COMPONENT_SIZES;
   icon?: React.ReactNode;
-  label: string;
+  label?: string;
+  className?: string;
 }) => {
   return (
-    <button className={`btn btn-${variant} btn-${size}`}>
+    <button className={`btn btn-${variant} btn-${size} ${className}`}>
       {label}
       {icon && icon}
     </button>

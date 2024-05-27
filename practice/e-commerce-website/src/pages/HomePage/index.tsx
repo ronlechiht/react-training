@@ -6,9 +6,13 @@ import ListProductCard from '../../components/ListProductCard/ListProductCard';
 import { ProductService } from '../../services/ProductService';
 /*Import CSS*/
 import './index.css';
+import { QUERY_PARAM_KEYS } from '../../constants';
 
 const service = new ProductService();
-const products = await service.getProducts();
+const params = {
+  [QUERY_PARAM_KEYS.limit]: 9
+};
+const products = await service.getProducts(params);
 
 const HomePage = () => {
   const productStyle = 'Casual';

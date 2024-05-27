@@ -27,8 +27,9 @@
 }
 
 .list-feedback-card {
-  display: grid;
-  grid-template-columns: auto auto;
-  gap: 20px;
-  width: max-content;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: max-content;
+  justify-content: space-between;
+  row-gap: 20px;
 }
