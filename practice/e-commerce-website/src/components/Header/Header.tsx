@@ -1,4 +1,5 @@
-import { useNavigate } from 'react-router-dom';
+/*Import hooks*/
+import { Link } from 'react-router-dom';
 /*Import constants*/
 import { TEXT_VARIANTS, COMPONENT_SIZES } from '../../constants';
 /*Import components*/
@@ -10,13 +11,6 @@ import { NavBar } from '../Nav/Nav';
 import './Header.css';
 
 const Header = () => {
-  const navigate = useNavigate();
-  const homePage = () => {
-    navigate('/');
-  };
-  const cartPage = () => {
-    navigate('/cart');
-  };
   return (
     <header>
       <div className="discount-notification">
@@ -32,20 +26,22 @@ const Header = () => {
       </div>
       <div className="container">
         <div className="header">
-          <h1 className="header-logo" onClick={homePage}>
-            <Text variant={TEXT_VARIANTS.title} size={COMPONENT_SIZES.small}>
-              shop.co
-            </Text>
-          </h1>
+          <Link to={'/'}>
+            <h1 className="header-logo">
+              <Text variant={TEXT_VARIANTS.title} size={COMPONENT_SIZES.small}>
+                shop.co
+              </Text>
+            </h1>
+          </Link>
           <NavBar />
           <InputField icon={<SearchIcon />} placeholder="Search for products..." />
           <div className="header-icons">
-            <button onClick={cartPage}>
+            <Link to={'/cart'}>
               <CartIcon />
-            </button>
-            <button>
+            </Link>
+            <Link to={'/account'}>
               <AccountIcon />
-            </button>
+            </Link>
           </div>
         </div>
       </div>

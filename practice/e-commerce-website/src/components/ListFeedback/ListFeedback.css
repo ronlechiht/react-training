@@ -1,8 +1,7 @@
 .feedback-card {
-  padding: 28px 32px;
+  padding: 28px 30px;
   border: 1px solid #0000001a;
   border-radius: 20px;
-  width: 548px;
 }
 
 .feedback-card-header {
@@ -27,9 +26,7 @@
 }
 
 .list-feedback-card {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: max-content;
-  justify-content: space-between;
-  row-gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(610px, 1fr));
+  gap: 20px;
 }

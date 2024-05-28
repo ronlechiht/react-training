@@ -47,3 +47,15 @@
   margin-bottom: 55px;
   text-align: center;
 }
+
+.product-details-loading {
+  height: 530px;
+}
+
+.feedbacks-loading {
+  height: 262px;
+}
+
+.recommend-loading {
+  height: 412px;
+}

@@ -1,10 +1,20 @@
+/*.list-product-card-default {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  column-gap: 20px;
+  row-gap: 36px;
+}*/
+
 .list-product-card-default {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: repeat(auto-fill, minmax(295px, 1fr));
+  column-gap: 20px;
   row-gap: 36px;
 }
 
 .list-product-card-recommend {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  column-gap: 20px;
 }

@@ -1,12 +1,17 @@
 .product-details {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   column-gap: 30px;
 }
 
 .product-image {
   display: flex;
   column-gap: 14px;
+}
+
+.product-image > img {
+  width: 444px;
+  height: 530px;
 }
 
 .product-image-sm {
@@ -20,10 +25,10 @@
 .list-product-image {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  row-gap: 14px;
 }
 
-.list-product-image img {
+.list-product-image > img {
   width: 150px;
   height: 166px;
 }

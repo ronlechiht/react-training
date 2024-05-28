@@ -2,19 +2,25 @@
 import Text from '../../components/Text/Text';
 import { FilterIcon } from '../../components/Icon';
 import ListProductCard from '../../components/ListProductCard/ListProductCard';
+import Loading from '../../components/Loading';
 /*Import service*/
 import { ProductService } from '../../services/ProductService';
 /*Import CSS*/
 import './index.css';
 import { QUERY_PARAM_KEYS } from '../../constants';
-
-const service = new ProductService();
-const params = {
-  [QUERY_PARAM_KEYS.limit]: 9
-};
-const products = await service.getProducts(params);
+import { useState, useEffect } from 'react';
+import { Product } from '../../types/Procduct';
 
 const HomePage = () => {
+  const service = new ProductService();
+  const [products, setProducts] = useState<Product[]>();
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await service.getProducts({ [QUERY_PARAM_KEYS.limit]: 9 });
+      setProducts(response);
+    };
+    fetchData();
+  }, []);
   const productStyle = 'Casual';
   return (
     <div className="home-page-body">
@@ -33,7 +39,11 @@ const HomePage = () => {
             </select>
           </div>
         </div>
-        <ListProductCard products={products} />
+        {products ? (
+          <ListProductCard products={products} />
+        ) : (
+          <Loading className="list-product-loading" />
+        )}
       </div>
     </div>
   );

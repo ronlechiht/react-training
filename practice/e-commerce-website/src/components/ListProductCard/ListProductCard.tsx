@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router-dom';
 /*Import types*/
 import { Product } from '../../types/Procduct';
 /*Import components*/
@@ -13,15 +12,10 @@ const ListProductCard = ({
   products: Product[];
   variant?: string;
 }) => {
-  const navigate = useNavigate();
-
-  const detailsPage = () => {
-    navigate('/details/10');
-  };
   return (
     <ul className={`list-product-card-${variant}`}>
       {products.map((product) => (
-        <li key={product.productId} onClick={detailsPage}>
+        <li key={product.productId}>
           <ProductCard {...product} />
         </li>
       ))}

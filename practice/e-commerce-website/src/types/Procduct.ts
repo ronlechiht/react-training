@@ -11,6 +11,5 @@ export interface Product {
   productDesc: string;
   productColors: string[];
   productSizes: string[];
-  sold: number;
   feedbacks?: Feedback[];
 }

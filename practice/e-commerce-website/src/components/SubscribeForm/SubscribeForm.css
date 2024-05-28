@@ -1,4 +1,6 @@
 .subscribe-form {
+  margin-bottom: -90px;
+  position: relative;
   display: flex;
   justify-content: space-between;
   background-color: #000;
