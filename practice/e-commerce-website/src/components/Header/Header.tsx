@@ -14,15 +14,17 @@ const Header = () => {
   return (
     <header>
       <div className="discount-notification">
-        <Text className="notification-msg">
-          Sign up and get 20% off to your first order.{' '}
-          <a href="#" className="sign-up-link">
-            Sign Up Now
-          </a>
-        </Text>
-        <button className="btn-close">
-          <CloseIcon />
-        </button>
+        <div className="container">
+          <Text className="notification-msg">
+            Sign up and get 20% off to your first order.{' '}
+            <a href="#" className="sign-up-link">
+              Sign Up Now
+            </a>
+          </Text>
+          <button className="btn-close">
+            <CloseIcon />
+          </button>
+        </div>
       </div>
       <div className="container">
         <div className="header">

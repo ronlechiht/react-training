@@ -1,14 +1,6 @@
-/*.list-product-card-default {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: left;
-  column-gap: 20px;
-  row-gap: 36px;
-}*/
-
 .list-product-card-default {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(295px, 1fr));
+  grid-template-columns: repeat(auto-fill, 295px);
   column-gap: 20px;
   row-gap: 36px;
 }

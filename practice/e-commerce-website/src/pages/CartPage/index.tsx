@@ -26,7 +26,7 @@ const CartPage = () => {
   }, []);
 
   return (
-    <div className="cart-page-body">
+    <div className="container cart-page-body">
       <Text variant={TEXT_VARIANTS.title} size={COMPONENT_SIZES.medium} className="cart-page-title">
         your cart
       </Text>

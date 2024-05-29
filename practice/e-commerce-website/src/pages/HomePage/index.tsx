@@ -26,7 +26,7 @@ const HomePage = () => {
   }, []);
   const productStyle = 'Casual';
   return (
-    <div className="home-page-body">
+    <div className="container home-page-body">
       <div className="filter-container">
         <Text>Filters</Text>
         <FilterIcon />
@@ -34,11 +34,13 @@ const HomePage = () => {
       <div className="list-products-container">
         <div className="list-products-header">
           <Text className="product-style">{productStyle}</Text>
-          <Text>Showing 1-10 of 100 Products</Text>
+          <Text>Showing 1-9 of 100 Products</Text>
           <div className="sort-container">
             <label>Sort by:</label>
             <select className="sort-option-list">
               <option value="popular">Most Popular</option>
+              <option value="price">Price</option>
+              <option value="rating">Rating</option>
             </select>
           </div>
         </div>

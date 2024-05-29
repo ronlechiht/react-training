@@ -1,8 +1,12 @@
 .discount-notification {
+  background-color: #000;
+}
+
+.discount-notification > .container {
   display: flex;
   justify-content: center;
-  background-color: #000;
-  padding: 10px 100px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .notification-msg {

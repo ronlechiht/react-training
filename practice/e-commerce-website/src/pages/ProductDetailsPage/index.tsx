@@ -42,7 +42,7 @@ const ProductDetailsPage = () => {
   const informationTabs = ['product details', 'rating & reviews', 'FAQs'];
 
   return (
-    <div className="product-details-page-body">
+    <div className="container product-details-page-body">
       {!isLoading ? (
         <ProductDetails {...product!} />
       ) : (
