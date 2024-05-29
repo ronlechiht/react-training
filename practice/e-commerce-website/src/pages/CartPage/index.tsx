@@ -14,10 +14,13 @@ import Loading from '../../components/Loading';
 const CartPage = () => {
   const service = new CartService();
   const [cart, setCart] = useState<CartProduct[]>();
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     const fetchData = async () => {
+      setIsLoading(true);
       const response = await service.getCart();
       setCart(response);
+      setIsLoading(false);
     };
     fetchData();
   }, []);
@@ -27,7 +30,7 @@ const CartPage = () => {
       <Text variant={TEXT_VARIANTS.title} size={COMPONENT_SIZES.medium} className="cart-page-title">
         your cart
       </Text>
-      {cart ? <Cart cartProducts={cart} /> : <Loading className="cart-loading" />}
+      {!isLoading ? <Cart cartProducts={cart!} /> : <Loading className="cart-loading" />}
     </div>
   );
 };

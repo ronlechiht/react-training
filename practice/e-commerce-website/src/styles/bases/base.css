@@ -1,0 +1,19 @@
+/*Base CSS*/
+@font-face {
+  font-family: 'satoshi';
+  src: url(/assets/fonts/Satoshi-Variable.ttf);
+}
+
+@font-face {
+  font-family: 'integralcf';
+  src: url(/assets/fonts/IntegralCF-Bold.ttf);
+}
+
+#root {
+  font-family: 'satoshi', sans-serif;
+  color: #00000099;
+}
+
+.container {
+  padding: 0 100px;
+}

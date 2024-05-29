@@ -14,10 +14,13 @@ import { Product } from '../../types/Procduct';
 const HomePage = () => {
   const service = new ProductService();
   const [products, setProducts] = useState<Product[]>();
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     const fetchData = async () => {
+      setIsLoading(true);
       const response = await service.getProducts({ [QUERY_PARAM_KEYS.limit]: 9 });
       setProducts(response);
+      setIsLoading(false);
     };
     fetchData();
   }, []);
@@ -39,8 +42,8 @@ const HomePage = () => {
             </select>
           </div>
         </div>
-        {products ? (
-          <ListProductCard products={products} />
+        {!isLoading ? (
+          <ListProductCard products={products!} />
         ) : (
           <Loading className="list-product-loading" />
         )}

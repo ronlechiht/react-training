@@ -26,20 +26,28 @@ const ProductDetailsPage = () => {
   const [product, setProduct] = useState<Product>();
   const [feedbacks, setFeedbacks] = useState<Feedback[]>();
   const [recommendProduct, setRecommendProduct] = useState<Product[]>();
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     const fetchData = async () => {
+      setIsLoading(true);
       const response1 = await service.getProductById(productId);
       const response2 = await service.getProducts({ [QUERY_PARAM_KEYS.limit]: 4 });
       setProduct(response1);
       setFeedbacks(response1.feedbacks);
       setRecommendProduct(response2);
+      setIsLoading(false);
     };
     fetchData();
   }, [productId]);
   const informationTabs = ['product details', 'rating & reviews', 'FAQs'];
+
   return (
     <div className="product-details-page-body">
-      {product ? <ProductDetails {...product} /> : <Loading className="product-details-loading" />}
+      {!isLoading ? (
+        <ProductDetails {...product!} />
+      ) : (
+        <Loading className="product-details-loading" />
+      )}
       <Tabs tabs={informationTabs} />
       <div className="rating-feedback-tab">
         <div className="list-feedback-header">
@@ -54,9 +62,9 @@ const ProductDetailsPage = () => {
           </select>
           <Button label="Write a Review" />
         </div>
-        {feedbacks ? (
+        {!isLoading ? (
           <>
-            <ListFeedback feedbacks={feedbacks} />
+            <ListFeedback feedbacks={feedbacks!} />
             <Button
               variant={BUTTON_VARIANTS.outline}
               label="Load More Reviews"
@@ -75,8 +83,8 @@ const ProductDetailsPage = () => {
         >
           you might also like
         </Text>
-        {recommendProduct ? (
-          <ListProductCard products={recommendProduct} variant="recommend" />
+        {!isLoading ? (
+          <ListProductCard products={recommendProduct!} variant="recommend" />
         ) : (
           <Loading className="recommend-loading" />
         )}
