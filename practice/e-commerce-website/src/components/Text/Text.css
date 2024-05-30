@@ -30,3 +30,7 @@
   font-size: 48px;
   line-height: 58px;
 }
+
+.empty-message {
+  font-size: 40px;
+}

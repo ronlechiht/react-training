@@ -2,7 +2,7 @@ import './index.css';
 
 const Loading = ({ className = '' }: { className?: string }) => {
   return (
-    <div className={`loader-container ${className}`}>
+    <div className={`flex-center-center ${className}`}>
       <span className="loader"></span>
     </div>
   );

@@ -34,3 +34,7 @@
   grid-template-columns: repeat(auto-fill, minmax(610px, 1fr));
   gap: 20px;
 }
+
+.empty-feedback-page {
+  height: 250px;
+}

@@ -105,3 +105,9 @@ export const PAYMENT_BADGE_LIST = [
   { url: 'apple-pay.svg', alt: 'apple pay badge' },
   { url: 'g-pay.svg', alt: 'google pay badge' }
 ];
+
+export const enum EMPTY_MSG_LIST {
+  product = 'There are no product to display',
+  feedback = 'There are no feedback to display',
+  cart = 'There are no product in cart'
+}

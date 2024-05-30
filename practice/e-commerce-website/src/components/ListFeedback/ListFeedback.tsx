@@ -2,7 +2,7 @@
 import { Feedback } from '../../types/Feedback';
 import Rating from '../Rating/Rating';
 /* Import contants */
-import { COMPONENT_SIZES, TEXT_VARIANTS } from '../../constants';
+import { COMPONENT_SIZES, TEXT_VARIANTS, EMPTY_MSG_LIST } from '../../constants';
 /* Import components */
 import Text from '../Text/Text';
 import ThreeDotsBtn from '../ThreeDotsBtn/ThreeDotsBtn';
@@ -39,13 +39,21 @@ const FeedbackCard = (feedback: Feedback) => {
  */
 const ListFeedback = ({ feedbacks }: { feedbacks: Feedback[] }) => {
   return (
-    <ul className="list-feedback-card">
-      {feedbacks.map((feedback) => (
-        <li key={feedback.customerId}>
-          <FeedbackCard {...feedback} />
-        </li>
-      ))}
-    </ul>
+    <>
+      {feedbacks.length ? (
+        <ul className="list-feedback-card">
+          {feedbacks.map((feedback) => (
+            <li key={feedback.customerId}>
+              <FeedbackCard {...feedback} />
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <div className="empty-feedback-page flex-center-center">
+          <Text className="empty-message">{EMPTY_MSG_LIST.feedback}</Text>
+        </div>
+      )}
+    </>
   );
 };
 

@@ -10,3 +10,7 @@
   justify-content: center;
   column-gap: 20px;
 }
+
+.empty-product-page {
+  height: 400px;
+}
