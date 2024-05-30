@@ -8,11 +8,6 @@
   column-gap: 12px;
 }
 
-.btn-outline {
-  border: 1px solid #0000001a;
-  background-color: #fff;
-}
-
 .btn-primary {
   background-color: #000;
   color: #fff;
@@ -21,6 +16,20 @@
 .btn-secondary {
   background-color: #fff;
   color: #000;
+}
+
+.btn-outline {
+  border: 1px solid #0000001a;
+  background-color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #645e6e;
+}
+
+.btn-secondary:hover,
+.btn-outline:hover {
+  background-color: #8a8495;
 }
 
 .btn-sm {

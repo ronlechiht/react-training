@@ -11,6 +11,10 @@
   column-gap: 4px;
 }
 
+.nav-menu-item > a:hover {
+  text-decoration: underline;
+}
+
 .footer-nav-list {
   display: flex;
   flex-direction: column;

@@ -7,13 +7,13 @@ import Rating from '../Rating/Rating';
 import Price from '../Price/Price';
 import Text from '../Text/Text';
 /* Import constants */
-import { COMPONENT_SIZES } from '../../constants';
+import { COMPONENT_SIZES, ROUTES } from '../../constants';
 /*Import CSS*/
 import './ProductCard.css';
 
 const ProductCard = (product: Product) => {
   return (
-    <Link to={`/details/${product.productId}`}>
+    <Link to={`${ROUTES.detailsPage}/${product.productId}`}>
       <div className="product-card">
         <img src={`/assets/images/${product.productId}.webp`} alt="product image" />
         <div className="product-infor">

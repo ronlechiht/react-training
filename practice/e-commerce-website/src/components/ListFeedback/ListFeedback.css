@@ -4,6 +4,10 @@
   border-radius: 20px;
 }
 
+.feedback-card:hover {
+  box-shadow: #64646f33 0px 7px 29px 0px;
+}
+
 .feedback-card-header {
   display: flex;
   justify-content: space-between;

@@ -4,6 +4,7 @@
 
 .product-card:hover {
   cursor: pointer;
+  margin-top: -10px;
 }
 
 .product-infor {

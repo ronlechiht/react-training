@@ -1,11 +1,12 @@
 /*Import hooks*/
 import { Link } from 'react-router-dom';
 /*Import constants*/
-import { TEXT_VARIANTS, COMPONENT_SIZES } from '../../constants';
+import { ROUTES } from '../../constants';
 /*Import components*/
 import { CloseIcon, SearchIcon, CartIcon, AccountIcon } from '../Icon';
 import Text from '../Text/Text';
 import InputField from '../InputField/InputField';
+import Logo from '../Logo';
 import { NavBar } from '../Nav/Nav';
 /*Import CSS*/
 import './Header.css';
@@ -28,20 +29,14 @@ const Header = () => {
       </div>
       <div className="container">
         <div className="header">
-          <Link to={'/'}>
-            <h1 className="header-logo">
-              <Text variant={TEXT_VARIANTS.title} size={COMPONENT_SIZES.small}>
-                shop.co
-              </Text>
-            </h1>
-          </Link>
+          <Logo className="header-logo" />
           <NavBar />
           <InputField icon={<SearchIcon />} placeholder="Search for products..." />
           <div className="header-icons">
-            <Link to={'/cart'}>
+            <Link to={ROUTES.cartPage}>
               <CartIcon />
             </Link>
-            <Link to={'/account'}>
+            <Link to={ROUTES.accountPage}>
               <AccountIcon />
             </Link>
           </div>

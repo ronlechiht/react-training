@@ -6,6 +6,16 @@ export const PRODUCTS_API = API_URL + '/products';
 export const CART_API = API_URL + '/cart';
 
 /**
+ * Difine routes url
+ */
+export const ROUTES = {
+  homePage: '/',
+  detailsPage: '/details',
+  cartPage: '/cart',
+  accountPage: '/account'
+};
+
+/**
  * query param keys of Json-server
  */
 export const enum QUERY_PARAM_KEYS {

@@ -9,6 +9,7 @@ import {
   PAYMENT_BADGE_LIST
 } from '../../constants';
 /*Import components*/
+import Logo from '../Logo';
 import SubscribeForm from '../SubscribeForm/SubscribeForm';
 import Text from '../Text/Text';
 import Badge from '../Badge';
@@ -27,9 +28,7 @@ const Footer = () => {
         <div className="container">
           <div className="footer-content">
             <div className="footer-logo">
-              <Text variant={TEXT_VARIANTS.title} size={COMPONENT_SIZES.small}>
-                shop.co
-              </Text>
+              <Logo className="footer-logo" />
               <Text className="footer-shop-describe">
                 We have clothes that suits your style and which you're proud to wear. From women to
                 men.
