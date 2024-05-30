@@ -1,7 +1,5 @@
 /*Import constants*/
 import {
-  COMPONENT_SIZES,
-  TEXT_VARIANTS,
   COMPANY_NAV_LIST,
   HELP_NAV_LIST,
   FAQ_NAV_LIST,
