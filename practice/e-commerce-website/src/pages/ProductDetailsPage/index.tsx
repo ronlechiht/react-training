@@ -1,6 +1,6 @@
 /* Import hooks */
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 /* Import constants */
 import { BUTTON_VARIANTS, COMPONENT_SIZES, QUERY_PARAM_KEYS, TEXT_VARIANTS } from '../../constants';
 /* Import types */
@@ -21,6 +21,7 @@ import { ProductService } from '../../services/ProductService';
 import './index.css';
 
 const ProductDetailsPage = () => {
+  const navigate = useNavigate();
   const service = new ProductService();
   const productId = useParams().productId!;
   const [product, setProduct] = useState<Product>();
@@ -31,6 +32,7 @@ const ProductDetailsPage = () => {
     const fetchData = async () => {
       setIsLoading(true);
       const response1 = await service.getProductById(productId);
+      !response1.productId && navigate('/error-page');
       const response2 = await service.getProducts({ [QUERY_PARAM_KEYS.limit]: 4 });
       setProduct(response1);
       setFeedbacks(response1.feedbacks);

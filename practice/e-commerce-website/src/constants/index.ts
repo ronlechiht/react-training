@@ -12,7 +12,8 @@ export const ROUTES = {
   homePage: '/',
   detailsPage: '/details',
   cartPage: '/cart',
-  accountPage: '/account'
+  accountPage: '/account',
+  errorPage: '/error-page'
 };
 
 /**

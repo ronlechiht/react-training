@@ -1,0 +1,16 @@
+.error-page-container {
+  height: 100vh;
+}
+
+.error-page {
+  align-items: center;
+  row-gap: 20px;
+}
+
+.error-page .flex-row {
+  column-gap: 10px;
+}
+
+.error-page-message {
+  font-size: 20px;
+}

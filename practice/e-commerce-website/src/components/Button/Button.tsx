@@ -1,4 +1,5 @@
 /* Import constants */
+import { MouseEventHandler } from 'react';
 import { BUTTON_VARIANTS, COMPONENT_SIZES } from '../../constants';
 /*Import CSS*/
 import './Button.css';
@@ -15,16 +16,18 @@ const Button = ({
   size = COMPONENT_SIZES.small,
   icon,
   label,
-  className = ''
+  className = '',
+  onClick
 }: {
   variant?: BUTTON_VARIANTS;
   size?: COMPONENT_SIZES;
   icon?: React.ReactNode;
   label?: string;
   className?: string;
+  onClick?: MouseEventHandler;
 }) => {
   return (
-    <button className={`btn btn-${variant} btn-${size} ${className}`}>
+    <button className={`btn btn-${variant} btn-${size} ${className}`} onClick={onClick}>
       {label}
       {icon && icon}
     </button>

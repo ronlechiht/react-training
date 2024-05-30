@@ -21,6 +21,15 @@
   max-width: 1240px;
 }
 
+.flex-row {
+  display: flex;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
 .flex-center-center {
   display: flex;
   justify-content: center;

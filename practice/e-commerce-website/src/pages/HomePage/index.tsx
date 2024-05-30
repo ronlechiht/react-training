@@ -18,8 +18,12 @@ const HomePage = () => {
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
-      const response = await service.getProducts({ [QUERY_PARAM_KEYS.limit]: 9 });
-      setProducts(response);
+      try {
+        const response = await service.getProducts({ [QUERY_PARAM_KEYS.limit]: 9 });
+        setProducts(response);
+      } catch (error) {
+        console.log(`ERRORRRRRRRR:${error}`);
+      }
       setIsLoading(false);
     };
     fetchData();
