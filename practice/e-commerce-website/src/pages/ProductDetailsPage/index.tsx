@@ -2,7 +2,13 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 /* Import constants */
-import { BUTTON_VARIANTS, COMPONENT_SIZES, QUERY_PARAM_KEYS, TEXT_VARIANTS } from '../../constants';
+import {
+  BUTTON_VARIANTS,
+  COMPONENT_SIZES,
+  QUERY_PARAM_KEYS,
+  ROUTES,
+  TEXT_VARIANTS
+} from '../../constants';
 /* Import types */
 import { Product } from '../../types/Procduct';
 import { Feedback } from '../../types/Feedback';
@@ -31,12 +37,16 @@ const ProductDetailsPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
-      const response1 = await service.getProductById(productId);
-      !response1.productId && navigate('/error-page');
-      const response2 = await service.getProducts({ [QUERY_PARAM_KEYS.limit]: 4 });
-      setProduct(response1);
-      setFeedbacks(response1.feedbacks);
-      setRecommendProduct(response2);
+      try {
+        const response1 = await service.getProductById(productId);
+        !response1.productId && navigate(ROUTES.errorPage);
+        const response2 = await service.getProducts({ [QUERY_PARAM_KEYS.limit]: 4 });
+        setProduct(response1);
+        setFeedbacks(response1.feedbacks);
+        setRecommendProduct(response2);
+      } catch (error) {
+        navigate(ROUTES.errorPage);
+      }
       setIsLoading(false);
     };
     fetchData();

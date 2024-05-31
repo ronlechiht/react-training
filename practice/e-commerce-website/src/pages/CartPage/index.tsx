@@ -1,25 +1,33 @@
+/*Import hooks*/
+import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 /* Import constants */
-import { COMPONENT_SIZES, TEXT_VARIANTS } from '../../constants';
+import { COMPONENT_SIZES, ROUTES, TEXT_VARIANTS } from '../../constants';
+/*Import types*/
+import { CartProduct } from '../../types/CartProduct';
 /* Import components */
 import Text from '../../components/Text/Text';
 import Cart from '../../components/Cart/Cart';
+import Loading from '../../components/Loading';
 /*Import services */
 import { CartService } from '../../services/CartService';
 /* Import CSS */
 import './index.css';
-import { useState, useEffect } from 'react';
-import { CartProduct } from '../../types/CartProduct';
-import Loading from '../../components/Loading';
 
 const CartPage = () => {
+  const navigate = useNavigate();
   const service = new CartService();
   const [cart, setCart] = useState<CartProduct[]>();
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     const fetchData = async () => {
       setIsLoading(true);
-      const response = await service.getCart();
-      setCart(response);
+      try {
+        const response = await service.getCart();
+        setCart(response);
+      } catch (error) {
+        navigate(ROUTES.errorPage);
+      }
       setIsLoading(false);
     };
     fetchData();

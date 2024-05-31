@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 /*Import components*/
 import Text from '../../components/Text/Text';
 import { FilterIcon } from '../../components/Icon';
@@ -7,11 +8,12 @@ import Loading from '../../components/Loading';
 import { ProductService } from '../../services/ProductService';
 /*Import CSS*/
 import './index.css';
-import { QUERY_PARAM_KEYS } from '../../constants';
+import { QUERY_PARAM_KEYS, ROUTES } from '../../constants';
 import { useState, useEffect } from 'react';
 import { Product } from '../../types/Procduct';
 
 const HomePage = () => {
+  const navigate = useNavigate();
   const service = new ProductService();
   const [products, setProducts] = useState<Product[]>();
   const [isLoading, setIsLoading] = useState(true);
@@ -22,7 +24,7 @@ const HomePage = () => {
         const response = await service.getProducts({ [QUERY_PARAM_KEYS.limit]: 9 });
         setProducts(response);
       } catch (error) {
-        console.log(`ERRORRRRRRRR:${error}`);
+        navigate(ROUTES.errorPage);
       }
       setIsLoading(false);
     };

@@ -9,7 +9,7 @@ import './index.css';
 
 const ErrorPage = () => {
   const navigate = useNavigate();
-  const handleGoBack = () => navigate(-3);
+  const handleGoBack = () => navigate(-2);
   const handleGoHome = () => navigate(ROUTES.homePage);
   return (
     <div className="flex-center-center error-page-container">
