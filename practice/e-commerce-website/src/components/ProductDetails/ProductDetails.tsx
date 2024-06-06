@@ -18,7 +18,7 @@ import {
 } from '../../constants';
 /* Import CSS */
 import './ProductDetails.css';
-import Divider from '../Divider/Divider';
+import Divider from '../Divider';
 
 const ProductImage = ({ productId, imageIndexs }: { productId: string; imageIndexs: string[] }) => {
   const [index, setIndex] = useState(imageIndexs[0]);

@@ -5,7 +5,7 @@ import { EMPTY_MSG_LIST } from '../../constants';
 /* Import components */
 import CartItem from '../CartItem/CartItem';
 import CartSummary from '../CartSummary/CartSummary';
-import Divider from '../Divider/Divider';
+import Divider from '../Divider';
 import Text from '../Text/Text';
 /* Import helpers */
 import { calcSubTotal } from '../../helpers/calcPrice';

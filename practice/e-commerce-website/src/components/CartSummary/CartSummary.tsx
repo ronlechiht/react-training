@@ -2,7 +2,7 @@
 import { COMPONENT_SIZES, TEXT_VARIANTS } from '../../constants';
 /* Import components */
 import Text from '../Text/Text';
-import Divider from '../Divider/Divider';
+import Divider from '../Divider';
 import Button from '../Button/Button';
 import InputField from '../InputField/InputField';
 import { DiscountIcon, RightArrowIcon } from '../Icon';
