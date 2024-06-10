@@ -10,10 +10,16 @@ import './InputRadio.css';
  * @param color color name string red || green || blue || judge-grey || stromboli || martinique
  * @returns input radio of a color
  */
-const ColorOption = ({ color }: { color: string }) => {
+const ColorOption = ({ color, isFirstOption }: { color: string; isFirstOption: boolean }) => {
   return (
     <>
-      <input type="radio" name="color" id={color} className="color-radio" />
+      <input
+        type="radio"
+        name="color"
+        id={color}
+        className="color-radio"
+        defaultChecked={isFirstOption}
+      />
       <label htmlFor={color} className="color-option">
         <div
           className="color-circle"
@@ -29,10 +35,16 @@ const ColorOption = ({ color }: { color: string }) => {
  * @param size size name string Small || Medium || Large || X-Large
  * @returns input radio of a size
  */
-const SizeOption = ({ size }: { size: string }) => {
+const SizeOption = ({ size, isFirstOption }: { size: string; isFirstOption: boolean }) => {
   return (
     <>
-      <input type="radio" name="size" id={size} className="size-radio" />
+      <input
+        type="radio"
+        name="size"
+        id={size}
+        className="size-radio"
+        defaultChecked={isFirstOption}
+      />
       <label htmlFor={size} className="size-option">
         {size}
       </label>
@@ -50,8 +62,8 @@ const ListColor = ({ options }: { options: string[] }) => {
     <>
       <Text className="select-title">Select Colors</Text>
       <div className="list-color">
-        {options.map((option) => (
-          <ColorOption color={option} key={option} />
+        {options.map((option, index) => (
+          <ColorOption color={option} key={option} isFirstOption={index === 0} />
         ))}
       </div>
     </>
@@ -68,8 +80,8 @@ const ListSize = ({ options }: { options: string[] }) => {
     <>
       <Text className="select-title">Choose Size</Text>
       <div className="list-size">
-        {options.map((option) => (
-          <SizeOption size={option} key={option} />
+        {options.map((option, index) => (
+          <SizeOption size={option} key={option} isFirstOption={index === 0} />
         ))}
       </div>
     </>

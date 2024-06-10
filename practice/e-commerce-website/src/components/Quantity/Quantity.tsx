@@ -2,6 +2,8 @@
 import { useState } from 'react';
 /* Import constants */
 import { COMPONENT_SIZES } from '../../constants';
+/*Import components*/
+import Text from '../Text/Text';
 /*Import CSS*/
 import './Quantity.css';
 
@@ -31,7 +33,7 @@ const Quantity = ({ firstQuantity, size }: { firstQuantity: number; size: COMPON
       >
         -
       </button>
-      {count}
+      <Text className="product-quantity-value">{count}</Text>
       <button className={`btn-quantity btn-quantity-${size}`} onClick={handleIncrease}>
         +
       </button>
