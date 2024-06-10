@@ -1,16 +1,24 @@
-import { HttpService } from './HttpService';
+//import { HttpService } from './HttpService';
 import { QueryParams } from '../types/QueryParams';
-import { Product } from '../types/Procduct';
 import { PRODUCTS_API } from '../constants';
+import { get, getId } from './HttpService';
 
-export class ProductService {
-  service = new HttpService(PRODUCTS_API);
+export const getProducts = (params?: QueryParams) => {
+  const { data, error, isLoading } = get(PRODUCTS_API, params);
 
-  async getProducts(params?: QueryParams) {
-    return this.service.get<Product[]>(params);
-  }
+  return {
+    products: data,
+    isProductsError: error,
+    isProductsLoading: isLoading
+  };
+};
 
-  async getProductById(id: string) {
-    return this.service.getId<Product>(id);
-  }
-}
+export const getProductById = (id: string) => {
+  const { data, error, isLoading } = getId(PRODUCTS_API, id);
+
+  return {
+    product: data,
+    isProductError: error,
+    isProductLoading: isLoading
+  };
+};

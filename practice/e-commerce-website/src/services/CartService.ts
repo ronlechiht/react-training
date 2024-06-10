@@ -1,11 +1,13 @@
-import { HttpService } from './HttpService';
-import { CartProduct } from '../types/CartProduct';
+//import { HttpService } from './HttpService';
 import { CART_API } from '../constants';
+import { get } from './HttpService';
 
-export class CartService {
-  service = new HttpService(CART_API);
+export const getCart = () => {
+  const { data, error, isLoading } = get(CART_API);
 
-  async getCart() {
-    return this.service.get<CartProduct[]>();
-  }
-}
+  return {
+    cart: data,
+    isCartError: error,
+    isCartLoading: isLoading
+  };
+};

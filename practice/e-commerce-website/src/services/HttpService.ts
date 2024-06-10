@@ -1,31 +1,23 @@
 import { QueryParams } from '../types/QueryParams';
 import { buildQueryString } from '../utils/buildQueryString';
+import useSWR from 'swr';
 
-export class HttpService {
-  constructor(private baseAPI: string) {}
+const fetcher = (baseAPI: string) => fetch(baseAPI).then((res) => res.json());
 
-  async request<T>(path: string, method: string): Promise<T> {
-    const res = await fetch(path, {
-      method,
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
-    return res.json();
+export const get = (baseAPI: string, params?: QueryParams) => {
+  let path = baseAPI;
+  if (params) {
+    const queryString: string = buildQueryString<QueryParams>(params);
+    path = baseAPI + queryString;
   }
 
-  get<T>(params?: QueryParams): Promise<T> {
-    let path: string = this.baseAPI;
-    if (params) {
-      const queryString: string = buildQueryString<QueryParams>(params);
-      path = this.baseAPI + queryString;
-    }
+  const { data, error, isLoading } = useSWR(path, fetcher);
+  return { data, error, isLoading };
+};
 
-    return this.request(path, 'GET');
-  }
+export const getId = (baseAPI: string, id: string) => {
+  const path: string = `${baseAPI}/${id}`;
 
-  getId<T>(id: string): Promise<T> {
-    let path: string = `${this.baseAPI}/${id}`;
-    return this.request(path, 'GET');
-  }
-}
+  const { data, error, isLoading } = useSWR(path, fetcher);
+  return { data, error, isLoading };
+};
