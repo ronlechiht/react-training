@@ -1,8 +1,13 @@
+import axios from 'axios';
 import { QueryParams } from '../types/QueryParams';
 import { buildQueryString } from '../utils/buildQueryString';
 import useSWR from 'swr';
 
-const fetcher = (baseAPI: string) => fetch(baseAPI).then((res) => res.json());
+const api = axios.create();
+
+//const fetcher = (baseAPI: string) => fetch(baseAPI).then((res) => res.json());
+
+const fetcher = (url: string) => api.get(url).then((res) => res.data);
 
 export const get = (baseAPI: string, params?: QueryParams) => {
   let path = baseAPI;
@@ -20,4 +25,8 @@ export const getId = (baseAPI: string, id: string) => {
 
   const { data, error, isLoading } = useSWR(path, fetcher);
   return { data, error, isLoading };
+};
+
+export const post = <T>(baseAPI: string, data: T) => {
+  return api.post(baseAPI, data);
 };

@@ -1,5 +1,6 @@
 /* Import hooks */
 import { useState } from 'react';
+import { v4 } from 'uuid';
 /* Import types */
 import { Product } from '../../types/Procduct';
 /* Import components */
@@ -19,6 +20,8 @@ import {
 /* Import CSS */
 import './ProductDetails.css';
 import Divider from '../Divider';
+import { CartProduct } from '../../types/CartProduct';
+import { addProduct } from '../../services/CartService';
 
 const ProductImage = ({ productId, imageIndexs }: { productId: string; imageIndexs: string[] }) => {
   const [index, setIndex] = useState(imageIndexs[0]);
@@ -44,6 +47,25 @@ const ProductImage = ({ productId, imageIndexs }: { productId: string; imageInde
 };
 
 const ProductDetails = (product: Product) => {
+  const handleAddToCart = () => {
+    const selectedColor = (
+      document.querySelector('input[name="color"]:checked')! as HTMLInputElement
+    ).id;
+    const selectedSize = (document.querySelector('input[name="size"]:checked')! as HTMLInputElement)
+      .id;
+    const quantity = document.querySelector('.product-quantity-value')!.innerHTML;
+    const cartProduct: CartProduct = {
+      cartItemId: v4(),
+      productId: product.productId,
+      productName: product.productName,
+      productPrice: product.productPrice,
+      productDiscount: product.productDiscount,
+      productColor: selectedColor,
+      productSize: selectedSize,
+      productQuantity: Number(quantity)
+    };
+    addProduct(cartProduct);
+  };
   return (
     <div className="product-details">
       <ProductImage productId={product.productId} imageIndexs={product.imageIndexs} />
@@ -70,6 +92,7 @@ const ProductDetails = (product: Product) => {
             variant={BUTTON_VARIANTS.primary}
             size={COMPONENT_SIZES.medium}
             label="Add to Cart"
+            onClick={handleAddToCart}
           />
         </div>
       </div>
