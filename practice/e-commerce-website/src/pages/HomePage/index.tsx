@@ -5,31 +5,18 @@ import { FilterIcon } from '../../components/Icon';
 import ListProductCard from '../../components/ListProductCard/ListProductCard';
 import Loading from '../../components/Loading';
 /*Import service*/
-import { ProductService } from '../../services/ProductService';
+import { getProducts } from '../../services/ProductService';
 /*Import CSS*/
 import './index.css';
 import { QUERY_PARAM_KEYS, ROUTES } from '../../constants';
-import { useState, useEffect } from 'react';
-import { Product } from '../../types/Procduct';
 
 const HomePage = () => {
   const navigate = useNavigate();
-  const service = new ProductService();
-  const [products, setProducts] = useState<Product[]>();
-  const [isLoading, setIsLoading] = useState(true);
-  useEffect(() => {
-    const fetchData = async () => {
-      setIsLoading(true);
-      try {
-        const response = await service.getProducts({ [QUERY_PARAM_KEYS.limit]: 9 });
-        setProducts(response);
-      } catch (error) {
-        navigate(ROUTES.errorPage);
-      }
-      setIsLoading(false);
-    };
-    fetchData();
-  }, []);
+  const { products, isProductsError, isProductsLoading } = getProducts({
+    [QUERY_PARAM_KEYS.limit]: 9
+  });
+  isProductsError && navigate(ROUTES.errorPage);
+
   const productStyle = 'Casual';
   return (
     <div className="container home-page-body">
@@ -50,7 +37,7 @@ const HomePage = () => {
             </select>
           </div>
         </div>
-        {!isLoading ? (
+        {!isProductsLoading ? (
           <ListProductCard products={products!} />
         ) : (
           <Loading className="list-product-loading" />

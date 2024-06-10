@@ -1,5 +1,4 @@
 /* Import hooks */
-import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 /* Import constants */
 import {
@@ -9,9 +8,6 @@ import {
   ROUTES,
   TEXT_VARIANTS
 } from '../../constants';
-/* Import types */
-import { Product } from '../../types/Procduct';
-import { Feedback } from '../../types/Feedback';
 /* Import components */
 import ListFeedback from '../../components/ListFeedback/ListFeedback';
 import ListProductCard from '../../components/ListProductCard/ListProductCard';
@@ -22,40 +18,23 @@ import { FilterIcon } from '../../components/Icon';
 import Button from '../../components/Button/Button';
 import Loading from '../../components/Loading';
 /* Import services */
-import { ProductService } from '../../services/ProductService';
+import { getProductById, getProducts } from '../../services/ProductService';
 /* Import CSS */
 import './index.css';
 
 const ProductDetailsPage = () => {
-  const navigate = useNavigate();
-  const service = new ProductService();
   const productId = useParams().productId!;
-  const [product, setProduct] = useState<Product>();
-  const [feedbacks, setFeedbacks] = useState<Feedback[]>();
-  const [recommendProduct, setRecommendProduct] = useState<Product[]>();
-  const [isLoading, setIsLoading] = useState(true);
-  useEffect(() => {
-    const fetchData = async () => {
-      setIsLoading(true);
-      try {
-        const response1 = await service.getProductById(productId);
-        !response1.productId && navigate(ROUTES.errorPage);
-        const response2 = await service.getProducts({ [QUERY_PARAM_KEYS.limit]: 4 });
-        setProduct(response1);
-        setFeedbacks(response1.feedbacks);
-        setRecommendProduct(response2);
-      } catch (error) {
-        navigate(ROUTES.errorPage);
-      }
-      setIsLoading(false);
-    };
-    fetchData();
-  }, [productId]);
-  const informationTabs = ['product details', 'rating & reviews', 'FAQs'];
+  const navigate = useNavigate();
+  const { product, isProductError, isProductLoading } = getProductById(productId);
+  const { products, isProductsError, isProductsLoading } = getProducts({
+    [QUERY_PARAM_KEYS.limit]: 4
+  });
+  (isProductError || isProductsError) && navigate(ROUTES.errorPage);
 
+  const informationTabs = ['product details', 'rating & reviews', 'FAQs'];
   return (
     <div className="container product-details-page-body">
-      {!isLoading ? (
+      {!isProductLoading ? (
         <ProductDetails {...product!} />
       ) : (
         <Loading className="product-details-loading" />
@@ -64,7 +43,7 @@ const ProductDetailsPage = () => {
       <div className="rating-feedback-tab">
         <div className="list-feedback-header">
           <Text className="feedbacks-title">
-            <span>all reviews </span>({feedbacks ? feedbacks.length : 0})
+            <span>all reviews </span>({product?.feedbacks ? product.feedbacks.length : 0})
           </Text>
           <div className="feedback-filter-select">
             <FilterIcon alternative />
@@ -74,9 +53,9 @@ const ProductDetailsPage = () => {
           </select>
           <Button label="Write a Review" />
         </div>
-        {!isLoading ? (
+        {!isProductLoading ? (
           <>
-            <ListFeedback feedbacks={feedbacks!} />
+            <ListFeedback feedbacks={product.feedbacks!} />
             <Button
               variant={BUTTON_VARIANTS.outline}
               label="Load More Reviews"
@@ -95,8 +74,8 @@ const ProductDetailsPage = () => {
         >
           you might also like
         </Text>
-        {!isLoading ? (
-          <ListProductCard products={recommendProduct!} variant="recommend" />
+        {!isProductsLoading ? (
+          <ListProductCard products={products!} variant="recommend" />
         ) : (
           <Loading className="recommend-loading" />
         )}
