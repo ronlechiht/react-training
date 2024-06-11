@@ -11,6 +11,7 @@ type Story = StoryObj<typeof Cart>;
 
 const cartProducts = [
   {
+    cartItemId: '01',
     productId: '01',
     productName: 'gradient graphic t-shirt',
     productPrice: 145,
@@ -20,6 +21,7 @@ const cartProducts = [
     productQuantity: 2
   },
   {
+    cartItemId: '02',
     productId: '05',
     productName: 'checkered shirt',
     productPrice: 180,
@@ -29,6 +31,7 @@ const cartProducts = [
     productQuantity: 3
   },
   {
+    cartItemId: '03',
     productId: '04',
     productName: 'skinny fit jeans',
     productPrice: 260,
