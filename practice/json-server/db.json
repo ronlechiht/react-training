@@ -1,66 +1,28 @@
 {
   "cart": [
     {
-      "id": 1,
-      "productId": "01",
-      "productName": "Gradient Graphic T-shirt",
-      "productPrice": 145,
-      "productDiscount": 0,
-      "productSize": "medium",
-      "productColor": "white",
-      "productQuantity": 2
-    },
-    {
-      "id": 2,
-      "productId": "02",
-      "productName": "Polo with Tipping Details",
-      "productPrice": 180,
-      "productDiscount": 0,
-      "productSize": "large",
-      "productColor": "red",
-      "productQuantity": 4
-    },
-    {
-      "id": 3,
-      "productId": "03",
-      "productName": "Black Striped T-shirt",
-      "productPrice": 150,
-      "productDiscount": 30,
+      "cartItemId": "455cb766-3406-42e9-a46f-04ac9b94e70a",
+      "productId": "05",
+      "productColor": "judge-grey",
       "productSize": "small",
-      "productColor": "green",
-      "productQuantity": 3
+      "productQuantity": 5,
+      "id": 3
     },
     {
-      "productId": "09",
-      "productName": "Loose Fit Bermuda Shorts",
-      "productPrice": 80,
-      "productDiscount": 0,
-      "productColor": "blue",
-      "productSize": "medium",
-      "productQuantity": 4,
+      "cartItemId": "7b95147e-d152-4ed0-a20b-afecc03620fa",
+      "productId": "01",
+      "productColor": "judge-grey",
+      "productSize": "small",
+      "productQuantity": 1,
       "id": 4
     },
     {
-      "cartItemId": "c28bf8b0-28d3-495c-a224-210f06d3d738",
-      "productId": "06",
-      "productName": "Sleeve Striped T-shirt",
-      "productPrice": 160,
-      "productDiscount": 30,
+      "cartItemId": "f06305a3-8809-4451-9edd-8df8e1f38bb9",
+      "productId": "02",
       "productColor": "judge-grey",
       "productSize": "small",
-      "productQuantity": 1,
+      "productQuantity": 2,
       "id": 5
-    },
-    {
-      "cartItemId": "75e8b9c4-2ae0-470e-b65b-dfef5318b998",
-      "productId": "04",
-      "productName": "Skinny Fit Jeans",
-      "productPrice": 260,
-      "productDiscount": 20,
-      "productColor": "judge-grey",
-      "productSize": "small",
-      "productQuantity": 1,
-      "id": 6
     }
   ],
   "products": [

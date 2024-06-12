@@ -9,20 +9,41 @@ import Divider from '../Divider';
 import Text from '../Text/Text';
 /* Import helpers */
 import { calcSubTotal } from '../../helpers/calcPrice';
+/* Import services */
+import { getProductById } from '../../services/ProductService';
 /* Import CSS */
 import './Cart.css';
+import { CartItemType } from '../../types/CartItem';
+import { deleteProduct } from '../../services/CartService';
 
 const Cart = ({ cartProducts }: { cartProducts: CartProduct[] }) => {
-  const subtotal = calcSubTotal(cartProducts);
+  const cart: CartItemType[] = [];
+  cartProducts.map((cartProduct) => {
+    const { product, isProductLoading } = getProductById(cartProduct.productId);
+    if (!isProductLoading) {
+      const cartItem = {
+        ...cartProduct,
+        productName: product.productName,
+        productPrice: product.productPrice,
+        productDiscount: product.productDiscount
+      };
+      cart.push(cartItem);
+    }
+  });
+  const subtotal = calcSubTotal(cart);
+
+  const handleDeleteItem = (id: string) => {
+    deleteProduct(id);
+  };
   return (
     <>
       {cartProducts.length ? (
         <div className="cart">
           <ul className="list-cart-product">
-            {cartProducts.map((cartProduct, index) => (
-              <li key={cartProduct.productId}>
+            {cart.map((cartItem, index) => (
+              <li key={cartItem.id}>
                 {index > 0 && <Divider />}
-                <CartItem {...cartProduct} />
+                <CartItem cartItem={cartItem} handler={handleDeleteItem} />
               </li>
             ))}
           </ul>

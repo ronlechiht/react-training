@@ -13,28 +13,43 @@ import './Quantity.css';
  * @param size size of Quantity
  * @returns Quantity component
  */
-const Quantity = ({ firstQuantity, size }: { firstQuantity: number; size: COMPONENT_SIZES }) => {
+const Quantity = ({
+  firstQuantity,
+  size,
+  change
+}: {
+  firstQuantity: number;
+  size: COMPONENT_SIZES;
+  change?: Function;
+}) => {
   const [count, setCount] = useState(firstQuantity);
 
   const handleIncrease = () => {
-    setCount(count + 1);
+    const newCount = count + 1;
+    setCount(newCount);
+    change && change(newCount);
   };
 
   const handleDecrease = () => {
-    setCount(count - 1);
+    const newCount = count - 1;
+    setCount(newCount);
+    change && change(newCount);
   };
 
   return (
     <div className={`product-quantity product-quantity-${size}`}>
       <button
-        className={`btn-quantity btn-quantity-${size}`}
+        className={`btn-quantity btn-quantity-${size} btn-quantity-decrease`}
         onClick={handleDecrease}
         disabled={count <= 1}
       >
         -
       </button>
       <Text className="product-quantity-value">{count}</Text>
-      <button className={`btn-quantity btn-quantity-${size}`} onClick={handleIncrease}>
+      <button
+        className={`btn-quantity btn-quantity-${size} btn-quantity-increase`}
+        onClick={handleIncrease}
+      >
         +
       </button>
     </div>
