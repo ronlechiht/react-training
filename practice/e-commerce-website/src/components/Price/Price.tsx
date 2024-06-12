@@ -43,12 +43,15 @@ const Discount = ({
 const Price = ({
   price,
   discount,
-  size
+  size,
+  quantity
 }: {
   price: number;
   discount: number;
   size: COMPONENT_SIZES;
+  quantity?: number;
 }) => {
+  if (quantity) price = price * quantity;
   return (
     <div className={`product-price product-price-${size}`}>
       <span className="price-reduced">${calcPrice(price, discount)}</span>

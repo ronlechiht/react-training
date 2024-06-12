@@ -21,7 +21,7 @@ const CartPage = () => {
       <Text variant={TEXT_VARIANTS.title} size={COMPONENT_SIZES.medium} className="cart-page-title">
         your cart
       </Text>
-      {!isCartLoading ? <Cart cartProducts={cart!} /> : <Loading className="cart-loading" />}
+      {!isCartLoading ? <Cart cartProducts={cart} /> : <Loading className="cart-loading" />}
     </div>
   );
 };

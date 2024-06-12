@@ -5,8 +5,6 @@ import useSWR from 'swr';
 
 const api = axios.create();
 
-//const fetcher = (baseAPI: string) => fetch(baseAPI).then((res) => res.json());
-
 const fetcher = (url: string) => api.get(url).then((res) => res.data);
 
 export const get = (baseAPI: string, params?: QueryParams) => {
@@ -28,5 +26,10 @@ export const getId = (baseAPI: string, id: string) => {
 };
 
 export const post = <T>(baseAPI: string, data: T) => {
-  return api.post(baseAPI, data);
+  api.post(baseAPI, data);
+};
+
+export const remove = (baseAPI: string, id: string) => {
+  const path: string = `${baseAPI}/${id}`;
+  api.delete(path);
 };

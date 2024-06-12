@@ -11,13 +11,15 @@ type Story = StoryObj<typeof CartItem>;
 
 export const CartProduct: Story = {
   args: {
-    cartItemId: '01',
-    productId: '01',
-    productName: 'gradient graphic t-shirt',
-    productPrice: 145,
-    productDiscount: 0,
-    productSize: 'large',
-    productColor: 'white',
-    productQuantity: 1
+    cartItem: {
+      cartItemId: '01',
+      productId: '01',
+      productName: 'AAAAAA',
+      productPrice: 1000,
+      productDiscount: 20,
+      productSize: 'large',
+      productColor: 'white',
+      productQuantity: 1
+    }
   }
 };

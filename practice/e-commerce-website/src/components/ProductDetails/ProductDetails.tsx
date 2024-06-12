@@ -57,9 +57,6 @@ const ProductDetails = (product: Product) => {
     const cartProduct: CartProduct = {
       cartItemId: v4(),
       productId: product.productId,
-      productName: product.productName,
-      productPrice: product.productPrice,
-      productDiscount: product.productDiscount,
       productColor: selectedColor,
       productSize: selectedSize,
       productQuantity: Number(quantity)
