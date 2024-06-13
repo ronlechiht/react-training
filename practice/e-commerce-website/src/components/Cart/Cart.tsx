@@ -1,3 +1,4 @@
+import { useState } from 'react';
 /* Import types */
 import { CartProduct } from '../../types/CartProduct';
 /*Import constants*/
@@ -9,37 +10,28 @@ import Divider from '../Divider';
 import Text from '../Text/Text';
 /* Import helpers */
 import { calcSubTotal } from '../../helpers/calcPrice';
-/* Import services */
-import { getProductById } from '../../services/ProductService';
 /* Import CSS */
 import './Cart.css';
 import { CartItemType } from '../../types/CartItem';
 
 const Cart = ({ cartProducts }: { cartProducts: CartProduct[] }) => {
   const cart: CartItemType[] = [];
-  cartProducts.map((cartProduct) => {
-    const { product, isProductLoading } = getProductById(cartProduct.productId);
-    if (!isProductLoading) {
-      const cartItem = {
-        ...cartProduct,
-        productName: product.productName,
-        productPrice: product.productPrice,
-        productDiscount: product.productDiscount
-      };
-      cart.push(cartItem);
-    }
-  });
-  const subtotal = calcSubTotal(cart);
+  const [subtotal, setSubtotal] = useState(0);
+  const handleUpdateCart = (cartItem: CartItemType, newCount?: number) => {
+    if (newCount) cartItem.productQuantity = newCount;
+    cart.push(cartItem);
+    setSubtotal(calcSubTotal(cart));
+  };
 
   return (
     <>
       {cartProducts.length ? (
         <div className="cart">
           <ul className="list-cart-product">
-            {cart.map((cartItem, index) => (
-              <li key={cartItem.id}>
+            {cartProducts.map((cartProduct, index) => (
+              <li key={cartProduct.id}>
                 {index > 0 && <Divider />}
-                <CartItem cartItem={cartItem} />
+                <CartItem cartProduct={cartProduct} handler={handleUpdateCart} />
               </li>
             ))}
           </ul>

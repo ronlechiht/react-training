@@ -1,39 +1,22 @@
 {
   "cart": [
     {
-      "cartItemId": "455cb766-3406-42e9-a46f-04ac9b94e70a",
-      "productId": "05",
-      "productColor": "judge-grey",
-      "productSize": "small",
-      "productQuantity": 5,
-      "id": 3
-    },
-    {
-      "cartItemId": "7b95147e-d152-4ed0-a20b-afecc03620fa",
-      "productId": "01",
-      "productColor": "judge-grey",
-      "productSize": "small",
-      "productQuantity": 1,
-      "id": 4
-    },
-    {
-      "cartItemId": "f06305a3-8809-4451-9edd-8df8e1f38bb9",
-      "productId": "02",
-      "productColor": "judge-grey",
-      "productSize": "small",
-      "productQuantity": 2,
-      "id": 5
-    },
-    {
-      "id": "c2ab73b2-0aca-4691-bcf4-13add71048ef",
-      "productId": "04",
+      "id": "5c02e7d8-41ee-4f1e-b4fb-261ed828acde",
+      "productId": "03",
       "productColor": "judge-grey",
       "productSize": "small",
       "productQuantity": 1
     },
     {
-      "id": "9ced6d21-2fff-4127-8628-9834376c7f3c",
-      "productId": "03",
+      "id": "bf7be050-074c-4f0a-b741-2d39d49fc9c4",
+      "productId": "01",
+      "productColor": "judge-grey",
+      "productSize": "small",
+      "productQuantity": 4
+    },
+    {
+      "id": "47f48a54-8417-4225-97c6-726d89ce0e41",
+      "productId": "02",
       "productColor": "judge-grey",
       "productSize": "small",
       "productQuantity": 1

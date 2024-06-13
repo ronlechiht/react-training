@@ -1,7 +1,7 @@
 //import { HttpService } from './HttpService';
 import { CART_API } from '../constants';
 import { CartProduct } from '../types/CartProduct';
-import { get, post, remove } from './HttpService';
+import { get, put, post, remove } from './HttpService';
 
 export const getCart = () => {
   const { data, error, isLoading } = get(CART_API);
@@ -15,6 +15,10 @@ export const getCart = () => {
 
 export const addProduct = (data: CartProduct) => {
   return post(CART_API, data);
+};
+
+export const updateProduct = (data: CartProduct) => {
+  return put(CART_API, data, data.id);
 };
 
 export const deleteProduct = (id: string) => {

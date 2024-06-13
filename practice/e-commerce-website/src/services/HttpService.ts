@@ -29,6 +29,11 @@ export const post = <T>(baseAPI: string, data: T) => {
   api.post(baseAPI, data);
 };
 
+export const put = <T>(baseAPI: string, data: T, id: string) => {
+  const path: string = `${baseAPI}/${id}`;
+  api.put(path, data);
+};
+
 export const remove = (baseAPI: string, id: string) => {
   const path: string = `${baseAPI}/${id}`;
   api.delete(path);
