@@ -11,22 +11,31 @@ type Story = StoryObj<typeof Cart>;
 
 const cartProducts = [
   {
-    cartItemId: '01',
+    id: '01',
     productId: '01',
+    productName: 'AAAA',
+    productPrice: 1000,
+    productDiscount: 20,
     productSize: 'large',
     productColor: 'white',
     productQuantity: 2
   },
   {
-    cartItemId: '02',
+    id: '02',
     productId: '05',
+    productName: 'AAAA',
+    productPrice: 1000,
+    productDiscount: 20,
     productSize: 'medium',
     productColor: 'red',
     productQuantity: 3
   },
   {
-    cartItemId: '03',
+    id: '03',
     productId: '04',
+    productName: 'AAAA',
+    productPrice: 1000,
+    productDiscount: 20,
     productSize: 'large',
     productColor: 'blue',
     productQuantity: 4

@@ -12,14 +12,14 @@ import './CartItem.css';
 import { useState } from 'react';
 import { deleteProduct } from '../../services/CartService';
 
-const CartItem = ({ cartItem, handler }: { cartItem: CartItemType; handler: CallableFunction }) => {
+const CartItem = ({ cartItem }: { cartItem: CartItemType}) => {
   const [quantity, setQuantity] = useState(cartItem.productQuantity);
 
   const handleChange = (newCount: number) => {
     setQuantity(newCount);
   };
 
-  const onClick = () => {
+  const handleDelete = () => {
     deleteProduct(cartItem.id);
   };
 
@@ -50,7 +50,7 @@ const CartItem = ({ cartItem, handler }: { cartItem: CartItemType; handler: Call
             />
           </div>
           <div className="cart-item-control">
-            <button onClick={onClick}>
+            <button onClick={handleDelete}>
               <RemoveIcon />
             </button>
             <Quantity

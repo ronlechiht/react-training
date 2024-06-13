@@ -55,7 +55,7 @@ const ProductDetails = (product: Product) => {
       .id;
     const quantity = document.querySelector('.product-quantity-value')!.innerHTML;
     const cartProduct: CartProduct = {
-      cartItemId: v4(),
+      id: v4(),
       productId: product.productId,
       productColor: selectedColor,
       productSize: selectedSize,

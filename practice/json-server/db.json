@@ -23,6 +23,20 @@
       "productSize": "small",
       "productQuantity": 2,
       "id": 5
+    },
+    {
+      "id": "c2ab73b2-0aca-4691-bcf4-13add71048ef",
+      "productId": "04",
+      "productColor": "judge-grey",
+      "productSize": "small",
+      "productQuantity": 1
+    },
+    {
+      "id": "9ced6d21-2fff-4127-8628-9834376c7f3c",
+      "productId": "03",
+      "productColor": "judge-grey",
+      "productSize": "small",
+      "productQuantity": 1
     }
   ],
   "products": [

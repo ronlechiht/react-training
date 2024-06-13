@@ -12,7 +12,7 @@ type Story = StoryObj<typeof CartItem>;
 export const CartProduct: Story = {
   args: {
     cartItem: {
-      cartItemId: '01',
+      id: '01',
       productId: '01',
       productName: 'AAAAAA',
       productPrice: 1000,

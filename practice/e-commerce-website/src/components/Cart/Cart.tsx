@@ -14,7 +14,6 @@ import { getProductById } from '../../services/ProductService';
 /* Import CSS */
 import './Cart.css';
 import { CartItemType } from '../../types/CartItem';
-import { deleteProduct } from '../../services/CartService';
 
 const Cart = ({ cartProducts }: { cartProducts: CartProduct[] }) => {
   const cart: CartItemType[] = [];
@@ -32,9 +31,6 @@ const Cart = ({ cartProducts }: { cartProducts: CartProduct[] }) => {
   });
   const subtotal = calcSubTotal(cart);
 
-  const handleDeleteItem = (id: string) => {
-    deleteProduct(id);
-  };
   return (
     <>
       {cartProducts.length ? (
@@ -43,7 +39,7 @@ const Cart = ({ cartProducts }: { cartProducts: CartProduct[] }) => {
             {cart.map((cartItem, index) => (
               <li key={cartItem.id}>
                 {index > 0 && <Divider />}
-                <CartItem cartItem={cartItem} handler={handleDeleteItem} />
+                <CartItem cartItem={cartItem} />
               </li>
             ))}
           </ul>
