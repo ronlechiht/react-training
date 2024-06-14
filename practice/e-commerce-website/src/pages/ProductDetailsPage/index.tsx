@@ -27,6 +27,7 @@ const ProductDetailsPage = () => {
   const navigate = useNavigate();
   const { product, isProductError, isProductLoading } = getProductById(productId);
   const { products, isProductsError, isProductsLoading } = getProducts({
+    [QUERY_PARAM_KEYS.page]: 1,
     [QUERY_PARAM_KEYS.limit]: 4
   });
   (isProductError || isProductsError) && navigate(ROUTES.errorPage);
