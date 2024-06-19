@@ -14,24 +14,28 @@ import { calcSubTotal } from '../../helpers/calcPrice';
 import './Cart.css';
 import { CartItemType } from '../../types/CartItem';
 
-const Cart = ({ cartProducts }: { cartProducts: CartProduct[] }) => {
+const Cart = ({ cartProducts, handler }: { cartProducts: CartProduct[], handler: CallableFunction }) => {
   const cart: CartItemType[] = [];
   const [subtotal, setSubtotal] = useState(0);
-  const handleUpdateCart = (cartItem: CartItemType, newCount?: number) => {
+  const handleUpdateCartItem = (cartItem: CartItemType, newCount?: number) => {
     if (newCount) cartItem.productQuantity = newCount;
     cart.push(cartItem);
     setSubtotal(calcSubTotal(cart));
   };
 
+  const handleDeleteCartItem = (id: string) => {
+    handler(id)
+  }
+
   return (
     <>
-      {cartProducts.length ? (
+      {cartProducts?.length ? (
         <div className="cart">
           <ul className="list-cart-product">
             {cartProducts.map((cartProduct, index) => (
               <li key={cartProduct.id}>
                 {index > 0 && <Divider />}
-                <CartItem cartProduct={cartProduct} handler={handleUpdateCart} />
+                <CartItem cartProduct={cartProduct} handler={handleUpdateCartItem} handler2={handleDeleteCartItem}/>
               </li>
             ))}
           </ul>

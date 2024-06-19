@@ -17,10 +17,12 @@ import { useEffect, useState } from 'react';
 
 const CartItem = ({
   cartProduct,
-  handler
+  handler,
+  handler2
 }: {
   cartProduct: CartProduct;
   handler: CallableFunction;
+  handler2: CallableFunction
 }) => {
   const [quantity, setQuantity] = useState(cartProduct.productQuantity);
   const { product, isProductLoading } = getProductById(cartProduct.productId);
@@ -45,6 +47,7 @@ const CartItem = ({
 
   const handleDelete = () => {
     deleteProduct(cartProduct.id);
+    handler2(cartProduct.id)
   };
 
   return (

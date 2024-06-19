@@ -14,8 +14,8 @@ export const get = (baseAPI: string, params?: QueryParams) => {
     path = baseAPI + queryString;
   }
 
-  const { data, error, isLoading } = useSWR(path, fetcher);
-  return { data, error, isLoading };
+  const { data, error, isLoading, mutate } = useSWR(path, fetcher);
+  return { data, error, isLoading, mutate };
 };
 
 export const getId = (baseAPI: string, id: string) => {

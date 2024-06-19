@@ -4,12 +4,13 @@ import { CartProduct } from '../types/CartProduct';
 import { get, put, post, remove } from './HttpService';
 
 export const getCart = () => {
-  const { data, error, isLoading } = get(CART_API);
+  const { data, error, isLoading, mutate }: {data: CartProduct[], error: boolean, isLoading: boolean, mutate} = get(CART_API);
 
   return {
     cart: data,
     isCartError: error,
-    isCartLoading: isLoading
+    isCartLoading: isLoading,
+    mutate
   };
 };
 
