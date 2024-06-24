@@ -1,0 +1,14 @@
+.filter-type {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.type-option {
+  text-transform: capitalize;
+}
+
+.type-option:hover {
+  cursor: pointer;
+  font-weight: 700;
+}

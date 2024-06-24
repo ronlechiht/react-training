@@ -23,7 +23,7 @@ export const ROUTES = {
 export const enum QUERY_PARAM_KEYS {
   page = 'page',
   limit = 'limit',
-  search = 'name',
+  search = 'productType',
   sort = 'sortBy',
   order = 'order'
 }

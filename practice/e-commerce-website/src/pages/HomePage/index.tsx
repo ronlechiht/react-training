@@ -11,6 +11,9 @@ import './index.css';
 import { QUERY_PARAM_KEYS, ROUTES } from '../../constants';
 import { useState } from 'react';
 import { QueryParams } from '../../types/QueryParams';
+import Divider from '../../components/Divider';
+import FilterSelect from '../../components/FilterSelect';
+import { omit } from 'lodash';
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -27,12 +30,27 @@ const HomePage = () => {
     setParams(newParams);
   };
 
+  const handleFilter = (e: Event) => {
+    const filterOption = (e.target as Element).innerHTML;
+    let newParams: QueryParams;
+    filterOption === params.productType
+      ? (newParams = omit(params, [QUERY_PARAM_KEYS.search]))
+      : (newParams = { ...params, [QUERY_PARAM_KEYS.search]: filterOption });
+    setParams(newParams);
+  };
+
   const productStyle = 'Casual';
+  const options = ['t-shirts', 'shorts', 'shirts', 'hoodie', 'jeans'];
   return (
     <div className="container home-page-body">
       <div className="filter-container">
-        <Text>Filters</Text>
-        <FilterIcon />
+        <div className="filter-header">
+          <Text>Filters</Text>
+          <FilterIcon />
+        </div>
+        <Divider />
+        <FilterSelect options={options} handler={() => handleFilter} />
+        <Divider />
       </div>
       <div className="list-products-container">
         <div className="list-products-header">
