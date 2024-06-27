@@ -1,6 +1,3 @@
-import { useState } from 'react';
-/* Import types */
-import { CartProduct } from '../../types/CartProduct';
 /*Import constants*/
 import { EMPTY_MSG_LIST } from '../../constants';
 /* Import components */
@@ -8,21 +5,11 @@ import CartItem from '../CartItem/CartItem';
 import CartSummary from '../CartSummary/CartSummary';
 import Divider from '../Divider';
 import Text from '../Text/Text';
-/* Import helpers */
-import { calcSubTotal } from '../../helpers/calcPrice';
 /* Import CSS */
 import './Cart.css';
 import { CartItemType } from '../../types/CartItem';
 
-const Cart = ({ cartProducts }: { cartProducts: CartProduct[] }) => {
-  const cart: CartItemType[] = [];
-  const [subtotal, setSubtotal] = useState(0);
-  const handleUpdateCart = (cartItem: CartItemType, newCount?: number) => {
-    if (newCount) cartItem.productQuantity = newCount;
-    cart.push(cartItem);
-    setSubtotal(calcSubTotal(cart));
-  };
-
+const Cart = ({ cartProducts, subtotal }: { cartProducts: CartItemType[]; subtotal: number }) => {
   return (
     <>
       {cartProducts.length ? (
@@ -31,7 +18,7 @@ const Cart = ({ cartProducts }: { cartProducts: CartProduct[] }) => {
             {cartProducts.map((cartProduct, index) => (
               <li key={cartProduct.id}>
                 {index > 0 && <Divider />}
-                <CartItem cartProduct={cartProduct} handler={handleUpdateCart} />
+                <CartItem cartProduct={cartProduct} />
               </li>
             ))}
           </ul>

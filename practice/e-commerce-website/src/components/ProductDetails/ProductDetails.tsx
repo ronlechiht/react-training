@@ -1,6 +1,7 @@
 /* Import hooks */
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { v4 } from 'uuid';
+import { CartContext } from '../../hooks/useCart';
 /* Import types */
 import { Product } from '../../types/Procduct';
 /* Import components */
@@ -20,8 +21,7 @@ import {
 /* Import CSS */
 import './ProductDetails.css';
 import Divider from '../Divider';
-import { CartProduct } from '../../types/CartProduct';
-import { addProduct } from '../../services/CartService';
+import { addProduct, updateProduct } from '../../services/CartService';
 
 const ProductImage = ({ productId, imageIndexs }: { productId: string; imageIndexs: string[] }) => {
   const [index, setIndex] = useState(imageIndexs[0]);
@@ -47,6 +47,12 @@ const ProductImage = ({ productId, imageIndexs }: { productId: string; imageInde
 };
 
 const ProductDetails = (product: Product) => {
+  const cartContext = useContext(CartContext);
+  if (!cartContext) {
+    return null;
+  }
+  const { state, addItem, updateItem } = cartContext;
+
   const handleAddToCart = () => {
     const selectedColor = (
       document.querySelector('input[name="color"]:checked')! as HTMLInputElement
@@ -54,14 +60,30 @@ const ProductDetails = (product: Product) => {
     const selectedSize = (document.querySelector('input[name="size"]:checked')! as HTMLInputElement)
       .id;
     const quantity = document.querySelector('.product-quantity-value')!.innerHTML;
-    const cartProduct: CartProduct = {
-      id: v4(),
-      productId: product.productId,
-      productColor: selectedColor,
-      productSize: selectedSize,
-      productQuantity: Number(quantity)
-    };
-    addProduct(cartProduct);
+    const existingItemIndex = state.items.findIndex(
+      (item) =>
+        item.productId === product.productId &&
+        item.productColor === selectedColor &&
+        item.productSize === selectedSize
+    );
+    if (existingItemIndex >= 0) {
+      const newItem = {
+        ...state.items[existingItemIndex],
+        productQuantity: state.items[existingItemIndex].productQuantity + Number(quantity)
+      };
+      updateItem(newItem);
+      updateProduct(newItem);
+    } else {
+      const newItem = {
+        id: v4(),
+        productId: product.productId,
+        productColor: selectedColor,
+        productSize: selectedSize,
+        productQuantity: Number(quantity)
+      };
+      addItem(newItem);
+      addProduct(newItem);
+    }
   };
   return (
     <div className="product-details">

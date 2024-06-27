@@ -14,6 +14,9 @@ export const CartProduct: Story = {
     cartProduct: {
       id: '01',
       productId: '01',
+      productName: 'ABC',
+      productPrice: 1000,
+      productDiscount: 20,
       productSize: 'large',
       productColor: 'white',
       productQuantity: 1

@@ -1,4 +1,6 @@
 /*Import hooks*/
+import { useContext } from 'react';
+import { CartContext } from '../../hooks/useCart';
 import { Link } from 'react-router-dom';
 /*Import constants*/
 import { ROUTES } from '../../constants';
@@ -12,6 +14,12 @@ import { NavBar } from '../Nav/Nav';
 import './Header.css';
 
 const Header = () => {
+  const cartContext = useContext(CartContext);
+  if (!cartContext) {
+    return null;
+  }
+  const { state } = cartContext;
+
   return (
     <header>
       <div className="discount-notification">
@@ -35,6 +43,7 @@ const Header = () => {
           <div className="header-icons">
             <Link to={ROUTES.cartPage}>
               <CartIcon />
+              <span className="cart-quantity">{state.countItems}</span>
             </Link>
             <Link to={ROUTES.accountPage}>
               <AccountIcon />

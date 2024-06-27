@@ -1,7 +1,5 @@
 /*Import types*/
 import { CartItemType } from '../types/CartItem';
-import { CartProduct } from '../types/CartProduct';
-import { Product } from '../types/Procduct';
 
 /**
  *
@@ -23,16 +21,10 @@ export const calcPrice = (price: number, discount: number) => {
   return price - calcDiscount(price, discount);
 };
 
-export const calcTotalPrice = (cartProduct: CartProduct, product: Product) => {
-  return calcPrice(product.productPrice, product.productDiscount) * cartProduct.productQuantity;
-};
-
-export const calcSubTotal = (cart: CartItemType[]) => {
-  let result = 0;
-  cart.map((cartItem) => {
-    result += calcPrice(cartItem.productPrice, cartItem.productDiscount) * cartItem.productQuantity;
-  });
-  return result;
+export const calcSubtotal = (items: CartItemType[]) => {
+  return items.reduce((total, item) => {
+    return total + calcPrice(item.productPrice, item.productDiscount) * item.productQuantity;
+  }, 0);
 };
 
 /**

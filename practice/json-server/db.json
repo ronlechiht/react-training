@@ -5,21 +5,30 @@
       "productId": "03",
       "productColor": "judge-grey",
       "productSize": "small",
-      "productQuantity": 1
+      "productQuantity": 2,
+      "productName": "Black Striped T-shirt",
+      "productPrice": 150,
+      "productDiscount": 30
     },
     {
       "id": "bf7be050-074c-4f0a-b741-2d39d49fc9c4",
       "productId": "01",
       "productColor": "judge-grey",
       "productSize": "small",
-      "productQuantity": 4
+      "productQuantity": 2,
+      "productName": "Gradient Graphic T-shirt",
+      "productPrice": 145,
+      "productDiscount": 0
     },
     {
       "id": "47f48a54-8417-4225-97c6-726d89ce0e41",
       "productId": "02",
       "productColor": "judge-grey",
       "productSize": "small",
-      "productQuantity": 1
+      "productQuantity": 2,
+      "productName": "Polo with Tipping Details",
+      "productPrice": 180,
+      "productDiscount": 0
     }
   ],
   "products": [

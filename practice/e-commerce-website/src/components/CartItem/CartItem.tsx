@@ -1,6 +1,8 @@
+/* Import hooks */
+import { useContext, useState } from 'react';
+import { CartContext } from '../../hooks/useCart';
 /* Import types */
 import { CartItemType } from '../../types/CartItem';
-import { CartProduct } from '../../types/CartProduct';
 /* Import components */
 import Text from '../Text/Text';
 import Price from '../Price/Price';
@@ -10,46 +12,33 @@ import { RemoveIcon } from '../Icon';
 import { TEXT_VARIANTS, COMPONENT_SIZES } from '../../constants';
 /* Import services */
 import { updateProduct, deleteProduct } from '../../services/CartService';
-import { getProductById } from '../../services/ProductService';
 /* Import CSS */
 import './CartItem.css';
-import { useEffect, useState } from 'react';
 
-const CartItem = ({
-  cartProduct,
-  handler
-}: {
-  cartProduct: CartProduct;
-  handler: CallableFunction;
-}) => {
+const CartItem = ({ cartProduct }: { cartProduct: CartItemType }) => {
   const [quantity, setQuantity] = useState(cartProduct.productQuantity);
-  const { product, isProductLoading } = getProductById(cartProduct.productId);
-  let cartItem: CartItemType;
-  useEffect(() => {
-    if (!isProductLoading) {
-      cartItem = {
-        ...cartProduct,
-        productName: product.productName,
-        productPrice: product.productPrice,
-        productDiscount: product.productDiscount
-      };
-      handler(cartItem);
-    }
-  });
+  const cartContext = useContext(CartContext);
 
-  const handleChange = (newCount: number) => {
-    setQuantity(newCount);
-    cartProduct.productQuantity = newCount;
+  if (!cartContext) {
+    return null;
+  }
+  const { updateItem, removeItem } = cartContext;
+
+  const handleChange = (newQuantity: number) => {
+    setQuantity(newQuantity);
+    cartProduct.productQuantity = newQuantity;
+    updateItem(cartProduct);
     updateProduct(cartProduct);
   };
 
   const handleDelete = () => {
+    removeItem(cartProduct.id);
     deleteProduct(cartProduct.id);
   };
 
   return (
     <>
-      {!isProductLoading && (
+      {cartProduct && (
         <div className="cart-item">
           <img
             src={`assets/images/${cartProduct.productId}.webp`}
@@ -58,7 +47,7 @@ const CartItem = ({
           />
           <div className="cart-item-body">
             <div className="cart-item-infor">
-              <Text variant={TEXT_VARIANTS.name}>{product.productName}</Text>
+              <Text variant={TEXT_VARIANTS.name}>{cartProduct.productName}</Text>
               <Text className="item-infor-props">
                 <span>Size: </span>
                 {cartProduct.productSize}
@@ -68,8 +57,8 @@ const CartItem = ({
                 {cartProduct.productColor}
               </Text>
               <Price
-                price={product.productPrice}
-                discount={product.productDiscount}
+                price={cartProduct.productPrice}
+                discount={cartProduct.productDiscount}
                 size={COMPONENT_SIZES.small}
                 quantity={quantity}
               />
