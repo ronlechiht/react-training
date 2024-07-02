@@ -1,34 +1,34 @@
 {
   "cart": [
     {
-      "id": "5c02e7d8-41ee-4f1e-b4fb-261ed828acde",
-      "productId": "03",
-      "productColor": "judge-grey",
-      "productSize": "small",
-      "productQuantity": 2,
-      "productName": "Black Striped T-shirt",
-      "productPrice": 150,
-      "productDiscount": 30
-    },
-    {
-      "id": "bf7be050-074c-4f0a-b741-2d39d49fc9c4",
+      "id": "5be6834e-6cb0-4693-874c-b83723a4ee82",
       "productId": "01",
       "productColor": "judge-grey",
       "productSize": "small",
-      "productQuantity": 2,
+      "productQuantity": 3,
       "productName": "Gradient Graphic T-shirt",
       "productPrice": 145,
       "productDiscount": 0
     },
     {
-      "id": "47f48a54-8417-4225-97c6-726d89ce0e41",
+      "id": "2c945429-68e6-4d0c-b60b-90c5a0b03ce5",
       "productId": "02",
       "productColor": "judge-grey",
       "productSize": "small",
-      "productQuantity": 2,
+      "productQuantity": 3,
       "productName": "Polo with Tipping Details",
       "productPrice": 180,
       "productDiscount": 0
+    },
+    {
+      "id": "9088b371-f758-4652-8d67-34ae851e89c2",
+      "productId": "03",
+      "productColor": "judge-grey",
+      "productSize": "small",
+      "productQuantity": 3,
+      "productName": "Black Striped T-shirt",
+      "productPrice": 150,
+      "productDiscount": 30
     }
   ],
   "products": [

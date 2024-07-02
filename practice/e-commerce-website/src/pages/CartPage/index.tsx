@@ -19,15 +19,15 @@ const CartPage = () => {
     return null;
   }
   const { state, products } = cartContext;
-
   const items = state.items.reduce((acc: CartItemType[], item) => {
-    const product = products.find((product) => product.id === item.productId)!;
-    acc.push({
-      ...item,
-      productName: product.productName,
-      productPrice: product.productPrice,
-      productDiscount: product.productDiscount
-    });
+    const product = products.find((product) => product.id === item.productId);
+    product &&
+      acc.push({
+        ...item,
+        productName: product.productName,
+        productPrice: product.productPrice,
+        productDiscount: product.productDiscount
+      });
     return acc;
   }, []);
 
