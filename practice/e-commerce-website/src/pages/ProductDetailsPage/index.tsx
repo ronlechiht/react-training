@@ -21,15 +21,27 @@ import Loading from '../../components/Loading';
 import { getProductById, getProducts } from '../../services/ProductService';
 /* Import CSS */
 import './index.css';
+import useSWR from 'swr';
 
 const ProductDetailsPage = () => {
   const productId = useParams().productId!;
   const navigate = useNavigate();
-  const { product, isProductError, isProductLoading } = getProductById(productId);
-  const { products, isProductsError, isProductsLoading } = getProducts({
-    [QUERY_PARAM_KEYS.page]: 1,
-    [QUERY_PARAM_KEYS.limit]: 4
-  });
+  const {
+    data: product,
+    error: isProductError,
+    isLoading: isProductLoading
+  } = useSWR(productId, getProductById);
+  const {
+    data: products,
+    error: isProductsError,
+    isLoading: isProductsLoading
+  } = useSWR(
+    {
+      [QUERY_PARAM_KEYS.page]: 1,
+      [QUERY_PARAM_KEYS.limit]: 4
+    },
+    getProducts
+  );
   (isProductError || isProductsError) && navigate(ROUTES.errorPage);
 
   const informationTabs = ['product details', 'rating & reviews', 'FAQs'];

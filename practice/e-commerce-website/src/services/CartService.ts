@@ -4,16 +4,10 @@ import { CartProduct } from '../types/CartProduct';
 import { get, put, post, remove } from './HttpService';
 
 export const getCart = () => {
-  const { data, error, isLoading } = get(CART_API);
-
-  return {
-    cart: data,
-    isCartError: error,
-    isCartLoading: isLoading
-  };
+  return get(CART_API);
 };
 
-export const addProduct = (data: CartProduct) => {
+export const addProduct = (data: Omit<CartProduct, 'id'>) => {
   return post(CART_API, data);
 };
 

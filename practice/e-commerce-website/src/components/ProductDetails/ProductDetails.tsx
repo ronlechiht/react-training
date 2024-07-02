@@ -1,6 +1,5 @@
 /* Import hooks */
 import { useState, useContext } from 'react';
-import { v4 } from 'uuid';
 import { CartContext } from '../../hooks/useCart';
 /* Import types */
 import { Product } from '../../types/Procduct';
@@ -53,7 +52,7 @@ const ProductDetails = (product: Product) => {
   }
   const { state, addItem, updateItem } = cartContext;
 
-  const handleAddToCart = () => {
+  const handleAddToCart = async () => {
     const selectedColor = (
       document.querySelector('input[name="color"]:checked')! as HTMLInputElement
     ).id;
@@ -75,14 +74,13 @@ const ProductDetails = (product: Product) => {
       updateProduct(newItem);
     } else {
       const newItem = {
-        id: v4(),
         productId: product.productId,
         productColor: selectedColor,
         productSize: selectedSize,
         productQuantity: Number(quantity)
       };
-      addItem(newItem);
-      addProduct(newItem);
+      const response = await addProduct(newItem);
+      addItem({ ...newItem, id: response.id });
     }
   };
   return (

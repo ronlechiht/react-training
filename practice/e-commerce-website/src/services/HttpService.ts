@@ -1,40 +1,39 @@
 import axios from 'axios';
 import { QueryParams } from '../types/QueryParams';
 import { buildQueryString } from '../utils/buildQueryString';
-import useSWR from 'swr';
 
 const api = axios.create();
 
-const fetcher = (url: string) => api.get(url).then((res) => res.data);
-
-export const get = (baseAPI: string, params?: QueryParams) => {
+export const get = async (baseAPI: string, params?: QueryParams) => {
   let path = baseAPI;
   if (params) {
     const queryString: string = buildQueryString<QueryParams>(params);
     path = baseAPI + queryString;
   }
-
-  const { data, error, isLoading } = useSWR(path, fetcher);
-  return { data, error, isLoading };
+  const response = await api.get(path);
+  return response.data;
 };
 
-export const getId = (baseAPI: string, id: string) => {
+export const getId = async (baseAPI: string, id: string) => {
   const path: string = `${baseAPI}/${id}`;
 
-  const { data, error, isLoading } = useSWR(path, fetcher);
-  return { data, error, isLoading };
+  const response = await api.get(path);
+  return response.data;
 };
 
-export const post = <T>(baseAPI: string, data: T) => {
-  api.post(baseAPI, data);
+export const post = async <T>(baseAPI: string, data: T) => {
+  const response = await api.post(baseAPI, data);
+  return response.data;
 };
 
-export const put = <T>(baseAPI: string, data: T, id: string) => {
+export const put = async <T>(baseAPI: string, data: T, id: string) => {
   const path: string = `${baseAPI}/${id}`;
-  api.put(path, data);
+  const response = await api.put(path, data);
+  return response.data;
 };
 
-export const remove = (baseAPI: string, id: string) => {
+export const remove = async (baseAPI: string, id: string) => {
   const path: string = `${baseAPI}/${id}`;
-  api.delete(path);
+  const response = await api.delete(path);
+  return response;
 };

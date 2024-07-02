@@ -3,7 +3,8 @@ import { CartState } from '../types/CartState';
 import { CartAction } from '../types/CartAction';
 import { CartProduct } from '../types/CartProduct';
 import { Product } from '../types/Procduct';
-import { CART_API, PRODUCTS_API } from '../constants';
+import { getProducts } from '../services/ProductService';
+import { getCart } from '../services/CartService';
 
 export const cartReducer = (state: CartState, action: CartAction): CartState => {
   switch (action.type) {
@@ -67,14 +68,12 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const response = await fetch(PRODUCTS_API);
-      const data = await response.json();
+      const data = await getProducts();
       setProducts(data);
     };
 
     const fetchCartItems = async () => {
-      const response = await fetch(CART_API);
-      const data = await response.json();
+      const data = await getCart();
       dispatch({ type: 'SET_CART', payload: data });
     };
 

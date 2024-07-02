@@ -1,27 +1,33 @@
+import { omit } from 'lodash';
+/* Import hooks */
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-/*Import components*/
+import useSWR from 'swr';
+/* Import constants */
+import { QUERY_PARAM_KEYS, ROUTES } from '../../constants';
+/* Import types */
+import { QueryParams } from '../../types/QueryParams';
+/* Import components */
 import Text from '../../components/Text/Text';
 import { FilterIcon } from '../../components/Icon';
 import ListProductCard from '../../components/ListProductCard/ListProductCard';
 import Loading from '../../components/Loading';
-/*Import service*/
-import { getProducts } from '../../services/ProductService';
-/*Import CSS*/
-import './index.css';
-import { QUERY_PARAM_KEYS, ROUTES } from '../../constants';
-import { useState } from 'react';
-import { QueryParams } from '../../types/QueryParams';
 import Divider from '../../components/Divider';
 import FilterSelect from '../../components/FilterSelect';
-import { omit } from 'lodash';
+/* Import service */
+import { getProducts } from '../../services/ProductService';
+/* Import CSS */
+import './index.css';
 
 const HomePage = () => {
   const navigate = useNavigate();
-  const [params, setParams] = useState<QueryParams>({
-    [QUERY_PARAM_KEYS.page]: 1,
-    [QUERY_PARAM_KEYS.limit]: 9
-  });
-  const { products, isProductsError, isProductsLoading } = getProducts(params);
+  const [params, setParams] = useState<QueryParams>({});
+
+  const {
+    data: products,
+    error: isProductsError,
+    isLoading: isProductsLoading
+  } = useSWR(params, getProducts);
   isProductsError && navigate(ROUTES.errorPage);
 
   const handleSort = () => {
