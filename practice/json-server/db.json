@@ -5,7 +5,7 @@
       "productId": "01",
       "productColor": "judge-grey",
       "productSize": "small",
-      "productQuantity": 3,
+      "productQuantity": 4,
       "productName": "Gradient Graphic T-shirt",
       "productPrice": 145,
       "productDiscount": 0
@@ -25,10 +25,17 @@
       "productId": "03",
       "productColor": "judge-grey",
       "productSize": "small",
-      "productQuantity": 3,
+      "productQuantity": 4,
       "productName": "Black Striped T-shirt",
       "productPrice": 150,
       "productDiscount": 30
+    },
+    {
+      "productId": "04",
+      "productColor": "judge-grey",
+      "productSize": "small",
+      "productQuantity": 1,
+      "id": "Gye8"
     }
   ],
   "products": [

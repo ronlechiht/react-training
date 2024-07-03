@@ -15,12 +15,14 @@ import {
   BUTTON_VARIANTS,
   COMPONENT_SIZES,
   INPUT_RADIO_VARIANTS,
+  SNACKBAR_MSG,
   TEXT_VARIANTS
 } from '../../constants';
 /* Import CSS */
 import './ProductDetails.css';
 import Divider from '../Divider';
 import { addProduct, updateProduct } from '../../services/CartService';
+import { useSnackbar } from '../../hooks/useSnackbar';
 
 const ProductImage = ({ productId, imageIndexs }: { productId: string; imageIndexs: string[] }) => {
   const [index, setIndex] = useState(imageIndexs[0]);
@@ -51,6 +53,7 @@ const ProductDetails = (product: Product) => {
     return null;
   }
   const { state, addItem, updateItem } = cartContext;
+  const { showSnackbar } = useSnackbar();
 
   const handleAddToCart = async () => {
     const selectedColor = (
@@ -70,8 +73,13 @@ const ProductDetails = (product: Product) => {
         ...state.items[existingItemIndex],
         productQuantity: state.items[existingItemIndex].productQuantity + Number(quantity)
       };
-      updateItem(newItem);
-      updateProduct(newItem);
+      try {
+        updateProduct(newItem);
+        updateItem(newItem);
+        showSnackbar(SNACKBAR_MSG.addSuccess);
+      } catch (error) {
+        showSnackbar(SNACKBAR_MSG.error);
+      }
     } else {
       const newItem = {
         productId: product.productId,
@@ -79,9 +87,15 @@ const ProductDetails = (product: Product) => {
         productSize: selectedSize,
         productQuantity: Number(quantity)
       };
-      const response = await addProduct(newItem);
-      addItem({ ...newItem, id: response.id });
+      try {
+        const response = await addProduct(newItem);
+        addItem({ ...newItem, id: response.id });
+        showSnackbar(SNACKBAR_MSG.addSuccess);
+      } catch (error) {
+        showSnackbar(SNACKBAR_MSG.error);
+      }
     }
+    showSnackbar(SNACKBAR_MSG.addSuccess);
   };
   return (
     <div className="product-details">

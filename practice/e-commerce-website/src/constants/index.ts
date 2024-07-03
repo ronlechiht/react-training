@@ -113,3 +113,11 @@ export const enum EMPTY_MSG_LIST {
   feedback = 'There are no feedback to display',
   cart = 'There are no product in cart'
 }
+
+export const enum SNACKBAR_MSG {
+  addSuccess = 'The product has been added to cart!',
+  deleteSuccess = 'Product has been removed from the cart!',
+  error = 'Something went wrong'
+}
+
+export const SNACKBAR_DELAY = 3000;

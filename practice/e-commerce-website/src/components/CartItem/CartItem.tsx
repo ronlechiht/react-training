@@ -9,15 +9,17 @@ import Price from '../Price/Price';
 import Quantity from '../Quantity/Quantity';
 import { RemoveIcon } from '../Icon';
 /* Import constants */
-import { TEXT_VARIANTS, COMPONENT_SIZES } from '../../constants';
+import { TEXT_VARIANTS, COMPONENT_SIZES, SNACKBAR_MSG } from '../../constants';
 /* Import services */
 import { updateProduct, deleteProduct } from '../../services/CartService';
 /* Import CSS */
 import './CartItem.css';
+import { useSnackbar } from '../../hooks/useSnackbar';
 
 const CartItem = ({ cartProduct }: { cartProduct: CartItemType }) => {
   const [quantity, setQuantity] = useState(cartProduct.productQuantity);
   const cartContext = useContext(CartContext);
+  const { showSnackbar } = useSnackbar();
 
   if (!cartContext) {
     return null;
@@ -32,8 +34,13 @@ const CartItem = ({ cartProduct }: { cartProduct: CartItemType }) => {
   };
 
   const handleDelete = () => {
-    removeItem(cartProduct.id);
-    deleteProduct(cartProduct.id);
+    try {
+      deleteProduct(cartProduct.id);
+      removeItem(cartProduct.id);
+      showSnackbar(SNACKBAR_MSG.deleteSuccess);
+    } catch (error) {
+      showSnackbar(SNACKBAR_MSG.error);
+    }
   };
 
   return (
